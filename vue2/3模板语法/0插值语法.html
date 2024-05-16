@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>{{name}}, {{nam}}</h1>
+    </div>
+
+    <script>
+
+        // 一般而言，插值语法用于对标签里面的内容进行改变（只能用于标签体内容）
+
+        // 只要在Vue实例上的数据，都可以通过插值语法显示出来
+
+        // 即View可以读取vm里面的全部属性
+
+        new Vue({
+            el: "#root",
+
+            data: {
+                name: "woc",
+                nam: "Vue"
+            }
+        })
+    </script>
+</body>
+</html>

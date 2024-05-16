@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    
+
+    <div id="root">
+        <input type="text" name="" id="" v-model="xing">
+
+        <input type="text" name="" id="" v-model="ming">
+        
+        <h1>{{fullname()}}</h1>
+    </div>
+    
+    <script>
+        let countComputed = 0
+        new Vue({
+            el: "#root",
+
+            data: {
+                xing: "zhang",
+                ming: "san",
+            },
+            // 一般来说，计算属性是不会被修改的，如果一个计算属性只读，则只需要一个get方法即可
+            computed: {
+                // fullname: {
+                //     get: function() {
+                //         return this.xing + this.ming
+                //     }
+                // },
+
+                fullname() {
+                    return this.xing + this.ming
+                }
+            },
+
+            
+        })
+    </script>
+</body>
+</html>

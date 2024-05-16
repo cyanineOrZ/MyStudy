@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        层叠顺序，英文为stacking order 表示元素发生层叠时有特定的垂直显示顺序
+        文档流与ppt一样， 每个位于文档流的元素都有在某一个图层，
+        当某个元素的图层高于另一个元素的图层时，另一个元素就有可能被遮盖
+
+        z-index 
+        图层位置，其实就是元素的z轴位置
+
+        基础的层叠顺序（从下到上，也即最底层开始）
+
+        1、background/Border
+
+        2、负数z-index层
+
+        3、块级盒子
+
+        4、浮动盒子和绝对定位盒子
+
+        5、行内盒子
+
+        6、z-index：0
+
+        7、z-index：>0
+
+        */
+
+        /* 
+        创建层叠上下文
+
+        首先要知道 z-index：0和z-index：auto
+
+        在属于同一个层叠上下文时，z-index：0 和 z-index：auto 都属于z-index：0这个图层，但会被后来者覆盖
+
+        1、层叠上下文是用于创建一个独属于某个盒子的层叠结构，类似于触发BFC
+        在一个盒子里面使用
+        z-index：0，将会创建一个独属于该盒子的层叠上下文
+        该盒子的全部元素与该盒子在上一个层叠上下文共享同一个层级，
+        在该盒子内的元素则拥有一个独属于自己额层叠上下文。
+        简单来说，就是我的孩子和我的孩子是同辈，但是我的孩子和我的孩子之间有辈分。
+
+
+        2、z-index：auto不会创建层叠上下文，它所生成的图层属于上一个层叠上下文常用于生成的元素
+        */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // throw 抛出异常，对于代码中有可能出错的地方， 在该代码块中使用抛出异常， 可以提供异常信息
+        const test = (number1, number2) => {
+            if(number1 !== number2) {
+                throw new Error("zako")
+            }
+            else {
+                console.log("杂鱼");
+            }
+        }
+        test(1, 10)
+        test(2, 2)
+
+        // 可以看到， 在throw抛出异常后， 程序会执行断点， 断点在throw的位置
+    </script>
+</body>
+</html>

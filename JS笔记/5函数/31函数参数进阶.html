@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // arguments 动态参数
+
+        // ...other 剩余参数
+
+        // funcitonName.length 函数长度
+
+        // curry 柯里化
+    </script>
+
+
+
+
+
+    <!-- arguments是所有函数的内置对象,即创建就存在 arguments 用于存储用户传输的全部实参 argument是动态参数-->
+    <script>
+        // 多参数求和
+        function getSum() {
+            let sum = 0
+            if(arguments.length != 0) {
+                for(let i = 0; i < arguments.length; i++) {
+                    sum = sum + parseInt(arguments[i])
+                }
+            }
+            return sum
+        }
+
+        console.log(getSum(1, 2, 3));
+    </script>
+
+    <script>
+        // 柯里化：将一个多参函数，转换为每次只传递一个参数的函数
+        function curry(callback) {
+        //返回新的数组，并把之前的参数保存
+            return function father() {
+                if (arguments.length < callback.length) {
+                //保留当前传递的参数
+                    var param = Array.from(arguments)
+                    return function f2() {
+                        return father(...(param.concat(Array.from(arguments))))
+                    }
+                } else if (arguments.length == callback.length) {
+                    return callback.apply(this, arguments)
+                }
+            }
+        }
+    </script>
+
+
+    <!-- 剩余参数 ...other【...为字面量， other为命名】， 剩余参数是指函数接受到全部所需要的参数后， 接受多余的实参的数组【真数组】 -->
+    <script>
+        // 例
+        function test(a, b, c, ...other) {
+            console.log(other);
+        }
+
+        test(1, 2, 3, 4, 5, 6, 7, 8)
+        // 输出[4, 5, 6, 7, 8]
+    </script>
+
+
+
+    <!-- 函数长度length， 函数长度不是指函数的用了几行代码， 而是指函数 第一个指定值参数 或者 剩余参数 前参数的数量 -->
+    <script>
+        // 例1
+        function t(a, b = 1, c) {
+            return 0;
+        }
+        console.log(t.length);
+        // 输出1， 因为 b 是指定值参数， 所以只记录b前面的参数数量
+
+        // 例2
+        function t1(a, b, ...other) {
+            return 0;
+        }
+        console.log(t1.length);
+        // 输出2， 因为函数长度不会计算剩余参数的长度
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

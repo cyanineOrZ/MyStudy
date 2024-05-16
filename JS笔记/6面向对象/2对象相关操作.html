@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 一、调用对象的属性 -->
+
+    <!-- 调用对象的方法一、
+    使用对象的属性
+    ObjectName.attributeName(对象名.属性名)
+    调用对象的方法
+    ObjectName.functionName()(对项目.方法名())
+
+    调用对象的方法二、
+    此方法只能调用对象的属性，无法调用对象的方法
+    ObjectName['attributeName'](对象名['属性名']) -->
+
+    <!-- 二、遍历对象的属性
+    使用for in  -->
+    <!-- 
+        for in 增强循环虽然简单， 但是 循环的变量 如 for (let i in obj) 
+        在这里面 拿到的索引为 字符串类型 所以for in 循环 不应用于遍历数组
+    -->
+    <script>
+        var obj = {
+            name: '1',
+            age: '2',
+            ffc: '3',
+            sayHi: function() {
+                console.log('Hi')
+            },
+        }
+        for (let i in obj) {
+            // 遍历对象中的属性名, 方法名
+            console.log(i);
+
+            // 遍历对象中的属性值， 方法体
+            console.log(obj[i]);
+        }
+
+    
+    </script>
+
+
+    <!-- 三、对象的增删改查 -->
+    <script>
+        var people = {
+            name: '1',
+            age: '2',
+            ger: '2',
+
+            sayHi: function() {
+                console.log('Hi');
+            }
+        }
+
+        // 1、增
+        // js中， 只要直接调取对象， 并直接增加成员变量名和成员变量（成员方法一样）值便可以实现对对象的增加
+        people.ffc = 'acc'
+        console.log(people.ffc);
+
+        people.sayBey = function() {
+            console.log(bey);
+        }
+        console.log(people.sayBey);
+        
+        
+        // 2、删
+        // 删除对象成员变量和成员方法只需要delete关键字即可
+        // ps delete关键字删除的是对象的成员变量，即整个变量消失，而不是只删除值。
+
+        delete people.ffc
+        console.log(people);
+
+        // 3、改
+        // 直接调用对象， 并赋值修改后的值给对象即可。
+        console.log(people.age = "5");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

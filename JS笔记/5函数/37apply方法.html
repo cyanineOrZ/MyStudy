@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // apply()是函数内置的一个方法， 用于该表函数的调用者， 通过改变函数的调用者， 改变函数的this指向
+        var num = 100
+        const test = function() {
+            console.log(this.num)
+        }
+        test()
+        //此时输出为100， 可以看到, 函数的调用者为 windows
+
+
+        const obj = {
+            num: 10,
+            t: test
+        }
+        obj.t()
+        //此时输出为10,test的调用者为obj
+
+        obj.t.apply()
+        //此时输出100，这里是通过apply将test的运行对象改为了windows(当apply参数为空时， 为windows)
+    </script>
+</body>
+</html>

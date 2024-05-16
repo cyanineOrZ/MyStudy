@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+1、 布局定位属性
+display 显示模式
+position 定位模式
+translate 平移模式
+float 浮动模式
+clear 清除浮动模式
+visibility 可见模式
+overflow 元素溢出模式
+
+2、容器或者元素自身属性
+width 宽度
+height 高度
+margin 外边距
+padding 内边距
+border 边框
+background 背景颜色
+
+3、文本属性
+color 文本颜色
+font 文本字体
+text-decoration 文本线形装饰
+text-align 文本水平对齐位置
+vertical-align 文本垂直对齐方式
+text-indent 文本缩进
+line-height 行间距
+white-spaec 空白字符处理方法
+
+4、其他属性
+border-radius 圆角边框
+box-shadow 盒子阴影
+text-shadow 文本阴影
+*/

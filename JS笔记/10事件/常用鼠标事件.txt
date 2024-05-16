@@ -1,0 +1,8 @@
+onClick          鼠标左键点击触发事件
+onmouseover      鼠标经过触发事件
+onmouseout       鼠标离开触发事件
+onfocus          获得鼠标焦点触发事件
+onblur           失去鼠标焦点触发事件
+onmousemove      鼠标移动触发事件
+onmouseup        鼠标弹起触发事件（鼠标按下后松开即为弹起）
+onmousedown      鼠标按下触发事件

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(window.history);
+
+        // window对象给我们提供了一个history 对象，与浏览器历史记录进行交互。该对象包含用户(在浏览器窗口中)访问过的URL。移动端很常用
+    </script>
+
+    <script>
+        // 常用属性
+        // length 返回浏览器历史列表中url的数量， 拥有最大数量（不可无限延长）
+
+        // scrollRestoration 无返回值， 滚动恢复属性允许web应用程序在历史导航上显式地设置默认滚动恢复行为。
+        // 该属性有两个可选值，默认为auto，将恢复用户已滚动到的页面上的位置。
+        // 另一个值为：manual，不还原页上的位置，用户必须手动滚动到该位置。
+
+        // state 返回一个表示历史堆栈顶部的状态的值，这是一种可以不必等待popstate事件而查看状态的方式。
+
+        // pushState 
+    </script>
+
+    <script>
+        // 常用方法
+        // back() 返回上一个页面（在length中表现为退位， 返回到自身在length前一位的url对象）
+
+        // forward() 前进
+
+        // go(int number) 如果int>0， 则前进number 个页面， 如果int<0, 则后退number个页面
+    </script>
+</body>
+</html>

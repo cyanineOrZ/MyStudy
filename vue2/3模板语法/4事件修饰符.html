@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+
+
+    <script>
+        /**
+         * 常用事件
+         * 
+         * click  点击事件
+         * 
+         * keyup  键盘事件
+         * 
+        */
+    </script>
+
+
+    <script>
+        /**
+         * 1、@…….prevent  阻止默认事件
+         * 
+         * 2、@…….stop  阻止事件冒泡（事件触发者）
+         * 
+         * 3、@…….once  事件只能出发一次
+         * 
+         * 4、@…….capture  启用事件捕获
+         * 
+         * 5、@……self  只有用event.target是当前事件的触发者，才能触发该事件
+         * 
+         * 6、@…….passive: 事件默认行为立即执行，无需等待事件执行完毕后在进行事件默认行为
+         * 
+         * 修饰符支持链式调用
+        */
+    </script>
+
+
+    <div id="root">
+
+        <!-- 1、阻止默认行为 方式一，通过事件对象阻止 -->
+        <a href="" @click="test($event)">dianwo</a>
+
+        <!-- 方式二通过修饰符，进行阻止 -->
+        <a href="" @click.prevent="test1($event)">dianwo</a>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: {
+
+            },
+
+            methods: {
+                test: function(event) {
+                    event.preventDefault()
+                    alert("66")
+                },
+
+                test1: function() {
+                    alert("77")
+                },
+            }
+        })
+    </script>
+</body>
+</html>

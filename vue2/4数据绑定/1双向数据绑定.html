@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- 引入vue -->
+        <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <!-- 面试常考 -->
+
+    <!-- 
+
+        简单来说，双向绑定就是服务器端可以修改页面内容，页面端也能修改服务器端的内容，就叫做双向绑定
+
+     -->
+
+    <div id="root">
+        单向：<input type="text" name="" id="" v-bind:value="test">
+        双向：<input type="text" name="" id="" v-model:value="test1">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: {
+                test: "测试哦",
+
+                test1: "woc,双向"
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        检验变量的类型
+
+        1、typeof
+        ps: 对于 数组， 对象 和 null 的变量， typeof 会将该变量判断为 Object
+
+        2、instanceof(obj instanceof constrcutor)
+        简单来说，就是检测该对象是否来源或继承自这个构造函数
+
+        能判断该对对象的原型链上是拥有某个对象原型
+        ps：依据： 在其原型链里是否能找到该类型的原型
+
+
+        3、constructor
+
+        部分基本数据类型都拥有包装类对象，通过检测基本数据类型的构造函数，来判断数据类型
+        拥有包装类对象的Number， Boolean， String， 
+
+        4、Object.prototype.toString.call(obj)
+        能精确判断对象，并能给出对象属于哪类对象
+        ps：依据： 根据原型链
+     -->
+</head>
+<body>
+    <script>
+        var a = {
+            Namea: 'wo',
+        };
+        console.log(Object.prototype.toString.call(a));
+    </script>
+</body>
+</html>

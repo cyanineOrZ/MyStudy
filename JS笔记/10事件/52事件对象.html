@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 事件对象，也就是事件的对象， 事件对象里面拥有事件出发时的相关信息
+
+        // 使用场景，判断用户点击了哪个鼠标按钮， 输入哪个字符，按下了哪个键，从而通过用户的操作进行相应的事件
+    </script>
+
+    <button id="btn"></button>
+
+    <script>
+        // 在事件绑定的回调函数中的第一个参数就是事件对象
+
+        const btn = document.querySelector("#btn")
+        btn.addEventListener("click", function(e) {
+            console.log(e);
+        })
+        // 打印出来的便是这个事件对象
+
+
+    </script>
+
+    <script>
+        // 常用事件对象属性
+
+        // type  获取当前的事件类型
+
+        // clientX clientY 获取鼠标光标相对于浏览器可见窗口左上角的位置
+
+        // offsetX offsetY 获取鼠标光标相对于当前DOM元素左上角的位置
+
+        // key 用户按下的键盘键的值(不建议使用KeyCode)
+
+        // target 事件实际触发者（常用与事件冒泡和事件委托）
+    </script>
+
+    <input type="text" name="" id="input">
+    <script>
+        // 简单监听键盘输入的监听器
+        const input = document.querySelector("#input")
+        input.addEventListener('keyup', function(e) {
+            console.log(e.key);
+        })
+    </script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

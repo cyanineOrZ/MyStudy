@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    continue关键字
+    continue关键字用于立即跳出本次循环,并直接进行下次循环
+    例
+    <script>
+        for (i = 0; i < 5; i++) {
+            if (i == 3) {
+                continue
+            }
+            else {
+                console.log(i);
+            }
+        }
+        //结果为0 1 2 4 在i==3时，跳出了循环，并开始下一个循环
+    </script>
+
+    break关键字
+    break关键字用于立即退出剩余的全部循环
+    <script>
+        for (i = 0; i < 5; i++) {
+            if (i == 3) {
+                break;
+            }
+            else {
+                console.log(i);
+            }
+        }
+        //结果为 0 1 2 break为退出整个循环
+    </script>
+
+    while 循环
+</head>
+<body>
+    
+</body>
+</html>

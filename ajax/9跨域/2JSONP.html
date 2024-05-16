@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /**
+         * JSONP是一个非官方的解决跨域的方案，是由程序员开发出来的，但只能实现GET请求的跨域
+         * 
+         * 已经非常久远，一般不用
+         */
+            
+        /**
+         * JSONP是如何工作的？
+         * 
+         * 原理：在网页中本来就存在部分可以跨域通信的标签， 比如 img， link， iframe， script
+         * 
+         * 通过这些跨域标签来进行请求的发送
+         * 
+         * 
+         * script通过src跨域访问，得到的应该是一个script脚本，但服务端通常返回的数据，这时我们通过预定义函数，将需要返回的数据
+         * 
+         * 包裹为函数的参数，此时script通过跨域获取到的即为一个预定义函数的使用，这时就通过函数的参数来实现数据在不同域之间的传输
+         * 
+         */
+            
+        //示例
+    </script>
+
+    <style>
+        .text {
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="text" id="text">
+
+    </div>
+    <script>
+        const text = document.getElementById("text")
+        function test (data) {
+            text.innerHTML = data.name
+        }
+    </script>
+
+    <script src="http://127.0.0.1:5500/ajax/9%E8%B7%A8%E5%9F%9F/0test.js">
+        // 通过script的跨域能力进行跨域访问
+    </script>
+
+    <script src="http://127.0.0.1:8000/jsonp-server">
+
+    </script>
+</body>
+</html>

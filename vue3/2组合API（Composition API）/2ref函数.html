@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- ref函数，能将一个数据变为一个响应式数据 -->
+    <div id="app">
+        <button @click="change">Woc</button>
+    </div>
+    <!-- 
+
+     -->
+</body>
+<script>
+    const { createApp, ref } = Vue;
+    const app = Vue.createApp({
+        setup(props) {
+            let name = ref("woc")
+            let test = ref(18)
+
+            function change() {
+                console.log(name);
+                // 将会输出一个RefImpl 对象（引用实现的对象，即引用对象） 对象中存储着key，value，shallow，isRef
+
+                // reference引用 impl 实现， RefImpl就是引入实现，也就是实现响应式
+
+                // Vue3中实现ref，用的也是Objectdefineity(), 并且将getter和setter放入到原型对象上了
+                
+                // 由于是对象，所以使用.value去相对应的值, 在模板中，会自动解析ref对象，会自动读取value值
+                console.log(name.value);
+            }
+
+            return {
+                change
+            }
+        }
+    }).mount("#app")
+</script>
+</html>

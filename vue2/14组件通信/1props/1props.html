@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <button-test v-for="text in objs" :key="text.id" :ti="text.title"></button-test>
+    </div>
+
+    <script>
+        /**
+         * prop 全程 property 所有物
+         * 
+         * prop是一个可以在组件中自定义的属性，当一个值从一个组件传递给另一个组件的 prop属性时，
+         * 这个值就会变为另一个组件的所有物
+        */
+
+        /**
+         * 简单来说， Props就是通过父组件将数据传入子组件的属性中， 子组件通过某些prop属性接收这些数据， 并且将这些数据挂载到自己身上
+         * 
+         * 传入的值的类型会受到限制
+        */
+    </script>
+</body>
+
+<script>
+    // 添加一个组件
+    Vue.component("button-test", {
+        props: ['ti'],
+
+        template: '<button>{{ti}}</button>'
+    })
+
+    new Vue({
+        el: "#root",
+
+        data() {
+            return {
+                objs: [
+                    {id: 1, title: "woc",},
+                    {id: 2, title: "az",},
+                    {id: 3, title: "阿弥诺斯"}
+                ]
+            }
+        },
+    })
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 
+        shalldowRef: 只进行基本数据类型的响应式处理
+
+        shalldowReactive： 只进行引用数据类型的浅层响应式
+     -->
+    <div id="root">
+
+    </div>
+</body>
+<script>
+    // shallow浅层响应式：只响应第一层的数据，也就是只进行第一层数据的响应式处理（类似浅拷贝）
+    
+    // 传入的数据，如果是基础数据类型，则shalldowRef和Ref没有区别， 如果是引用数据类型，shalldowRef是不会进行任何处理的
+
+    const {shallowReactive, shallowRef} = Vue
+    const app = Vue.createApp({
+        setup(props) {
+            
+        }
+    }).mount("#app")
+</script>
+</html>

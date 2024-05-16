@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <ts></ts>
+        <tst></tst>
+    </div>
+
+    <script>
+        /**
+         * 组件有两种注册方式，局部注册和全局注册
+         * 
+         * 1、局部注册
+         * 
+         * 通过在Vue实例里面创建组件
+         * 
+         * new Vue({
+         *      components: {
+         *          
+         *      
+         *      }
+         * })
+         * 
+         * 
+         * 2、全局注册
+         * 
+         * Vue.component("name", Object{
+         *  options
+         * })
+         * 
+         * 全局注册的组件在被注册后，可以通过任意方式创建组件实例
+        */
+    </script>
+
+    <script>
+
+        // 局部注册方法， 只在id为root的容器里面生效
+        const ts = Vue.extend({
+            template: `<p>a</p>`
+        })
+
+        // 匿名写法
+        const tst = {
+            template: `<h1> p </h1>`
+        }
+
+        new Vue({
+            el: "#root",
+
+            components: {
+                ts: ts,
+                tst: tst
+            }
+        })
+    </script>
+</body>
+</html>

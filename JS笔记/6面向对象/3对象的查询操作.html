@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        let people = {
+            name: "黄庆彬",
+            age: 22,
+            sex: '男',
+
+            sayHi: function() {
+                console.log('Hi');
+            }
+        }
+
+        // 两种查询方式
+
+        // 1、ObjectName.AttributeName
+        console.log(people.name);
+        
+        // 2、ObjectName['AttributeName']——这一种查询方式常用
+        console.log(people['name']);
+
+
+        // 这种叫查看对象的成员方法，只会将方法完整地打印在控制台
+        console.log(people.sayHi);
+
+        // 这种叫调用成员方法
+        console.log(people.sayHi());
+    </script>
+</body>
+</html>

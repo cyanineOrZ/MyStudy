@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    数组计算通常用
+    数组遍历和
+    循环来完成
+    
+    一、计算数组的不同数据属性
+    <script>
+        //数组元素之和
+        var arr1 = [1,2,3,4,5,6,7,8,9]
+        var arrsum = 0;
+        for (i = 0; i < arr1.length; i++) {
+            arrsum = arrsum + arr1[i];
+        }
+        console.log(arrsum);
+
+        //数组平均值
+        arrsum = 0;
+        var arraverage = 0;
+        for (i = 0; i < arr1.length; i++) {
+            arrsum = arrsum + arr1[i];
+        }
+        arraverage = arrsum / arr1.length
+        console.log(arraverage);
+
+        //数组最大值
+        var arrmax = arr1[0];
+        for (i = 0; i < arr1.length; i++) {
+            if (arrmax > arr1[i]) {
+                arrmax = arrmax;
+            }
+            else {
+                arrmax = arr1[i];
+            }
+        }
+        console.log(arrmax);
+        //数组最小值
+        var arrmin = arr1[0];
+        for (i = 0; i < arr1.length; i++) {
+            if (arrmin < arr1[i]) {
+                arrmin = arrmin;
+            }
+            else {
+                arrmin = arr1[i];
+            }
+        }
+        console.log(arrmin);
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

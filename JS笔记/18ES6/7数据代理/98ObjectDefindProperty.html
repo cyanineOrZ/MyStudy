@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "woc"
+
+        // 用于为对象添加一个不可枚举，不可写入，不可配置的属性(也可以规定其他细节，解除限制)， 并返回这个对象
+        // Object.defineProperty(Object, {key: value})
+
+        const person = {
+            name: "woc",
+            age: 12,
+            sex: 1
+        };
+
+        console.log(person);
+
+        Object.defineProperty(person, 'test', {
+            enumerable: false,
+            configurable: false,
+
+            // 设置成员变量和成员方法的get和set方法
+
+            // 当被读取的时候，就会调用这个方法
+            get: function() {
+                console.log("读取");
+                return "woc"
+            },
+
+            // 当设置属性时，调用该方法
+            set: function(value) {
+                console.log("设置");
+                str = value
+            }
+        });
+
+        console.log(person);
+
+        /**
+         * value: 添加的值（当配置了getter和setter时，不可配置）
+         * 
+         * writable：是否可以被重写（默认false，设置setter，getter，则不可使用该配置）
+         * 
+         * enumerable：是否可以被枚举（默认为false）
+         * 
+         * configurable: 是否可以被删除（默认为false）
+         * 
+         * get（getter捕获，返回该数据的数据值）
+         * 
+         * set（setter设置，需要通过setter修改该值）
+        */
+
+    </script>
+</body>
+</html>

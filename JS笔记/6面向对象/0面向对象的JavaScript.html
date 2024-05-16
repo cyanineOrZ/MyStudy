@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    一、使用字面量创建对象
+    创建一个对象如下
+    <script>
+        var obj = {
+            name: '',
+            age: '',
+
+            sayHi: {
+
+            }
+            // 注意，多个属性和方法之间使用 ， 分隔
+        }
+    </script>
+    对象的属性和方法都不一定是必须的，但实例化的对象一定有属性和方法
+
+    二、new关键字创建对象
+    <script>
+        var obj = new Object();
+        obj.name = '';
+        obj.age = '';
+        obj.sayHi = function() {
+
+        }
+    </script>
+    new关键字创建对象是利用 = 赋值， 对对象添加属性和方法
+
+
+    三、构造函数创建对象
+    <script>
+        // 重复使用或者创建对象，多使用构造函数
+        // 构造函数相当于类 JavaBean类
+        function FunctionName() {
+            // this关键字为特指该对象，同Java的this关键字
+            this.attritude = '',
+            this.sayHi = function() {
+
+            }
+        }
+        
+        // 生成一个由构造函数形成的对象(同Java)
+        var objFunction = new FunctionName('1')
+
+        // 部分规范， 构造函数的开头必须大写
+    </script>
+
+    <script>
+        对象中的内容
+        // 1、成员变量
+        // 成员变量是对象中的变量，一般写在对象最前面
+
+        // 2、成员方法
+        // 成员方法指对象中的函数， 一般是匿名函数
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

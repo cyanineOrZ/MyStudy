@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+
+    <style>
+        .normal {
+            width: 50px;
+            height: 20px;
+            border: 1px solid black;
+        }
+        .test1 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .test2 {
+            width: 200px;
+            height: 50px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="normal" :class="testdiv"></div>
+        <button @click="changeColor($event)">dianwoqiehuan</button>
+    </div>
+    <script>
+        new Vue({
+
+            /**
+             * 一般来说，在Vue里面，可以通过给样式添加绑定（V-bind或者v-model都可，一般用v-bind）来动态控制样式
+             * 
+             * 1、直接绑定样式名，如例1
+             * 
+             * 2、对象绑定法
+             * 当绑定的是一个对象时，Vue会解析该对象，并根据该对象里面的对应的属性值，来确定class最终的样式
+             * 
+             * 3、数组绑定法
+             * 当绑定的是一个数组是，Vue会解析该数组，并将数组里面的样式全部添加到该标签的class属性内
+             * （数组也可以使用表达式，通过三目判断来决定一个数组项的值）
+             * 
+             * 4、多层嵌套法
+             * 通过绑定一个对象，对象内有多层数据，即可实现多层绑定
+             * 
+            */
+
+            el: "#root",
+
+            data: {
+                testdiv: 'test1'
+            },
+
+            methods: {
+                changeColor: function(event) {
+                    if(this.testdiv === "test1") {
+                        this.testdiv = 'test2'
+                    }
+                    else {
+                        this.testdiv = "test1"
+                    }
+                },
+            },
+        })
+    </script>
+</body>
+</html>

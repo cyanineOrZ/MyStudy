@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    三目运算表达式能用于一些简单的条件判断
+
+    结构如下
+
+    条件表达式 ? 表达式1 : 表达式2 ;
+
+    语法
+    如果条件表达式结果为true,则返回表达式1的值
+    如果为false,则返回表达式2的值
+
+    等价于
+    <script>
+        var a = 10,
+            b = 20;
+        var bol = a < b;
+        if(bol=true){
+            console.log('123');
+        }
+        else{
+            console.log('456');
+        }
+        /*结果为123*/
+    </script>
+    写成三目表达式
+    <script>
+        var a = 10,
+            b = 20;
+        var sb = (a > b ? '123' : '456');
+        console.log(sb);/*结果为456*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

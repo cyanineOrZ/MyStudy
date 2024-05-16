@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            min-height: 200px;
+            width: 200px;
+            background-color: black;
+            transition: all 0.2s ease;
+        }
+        .content:hover {
+            transition: all 0.2s linear;
+            transform: translateY(-10px);
+        }
+
+        .img {
+            display: block;
+            width: 180px;
+            height: 180px;
+        }
+
+        .Text {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            line-height: 20px;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .a {
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: blanchedalmond;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="buttonDiv" style="display: flex; flex-direction: row; justify-content: space-around; width: 900px;">
+        <a data-index="all">全部</a>
+        <a data-index="01000">0-1000</a>
+        <a data-index="100010000">1000-10000</a>
+        <a data-index="10000+">10000</a>
+    </div>
+    <div id="contain" style="display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 900px;">
+    </div>    
+    <script>
+        const contain = document.querySelector("#contain")
+        const data = [
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 200
+            },
+
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 400
+            },
+
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 600
+            },
+
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 1800
+            },
+
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 1200
+            },
+
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 300
+            },
+
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 0
+            },
+
+            {
+                url: "asagirlai.jpg",
+                name: "asagirlai",
+                gender: "女",
+                number: 20000
+            }
+        ]
+        
+        // 删除结构
+        function deleteImgDiv() {
+            if(contain.children.length != 0) {
+                // children是动态变化的， 每次创建前将全部删除
+                while(contain.children.length != 0) {
+                    contain.removeChild(contain.children[0])
+                }
+            }
+        }
+
+
+        //生成结构
+        function createImgDiv(item, index) {
+            const div = document.createElement('div')
+            div.className = 'content'
+            div.id = index
+            contain.appendChild(div)
+            if(div != null) {
+                const img = document.createElement('img')
+                img.src = item.url
+                img.className = 'img'
+
+                const textDiv = document.createElement('div')
+                textDiv.className = 'Text'
+
+                const nameText = document.createElement('div')
+                nameText.innerHTML = item.name
+
+                const genderText = document.createElement('div')
+                genderText.innerHTML = item.gender
+
+                const numberText = document.createElement('div')
+                numberText.innerHTML = item.number
+
+                div.appendChild(img)
+                div.appendChild(textDiv)
+
+                textDiv.appendChild(nameText)
+                textDiv.appendChild(genderText)
+                textDiv.appendChild(numberText)
+            }
+        }
+
+        if(data != null) {
+            data.forEach((item, index) => {
+                createImgDiv(item, index)
+            })     
+        }
+
+        document.querySelector("#buttonDiv").querySelectorAll('a').forEach(item => item.className = "a")
+
+        document.querySelector("#buttonDiv").addEventListener('click', e => {
+            const {tagName, dataset} = e.target
+            if(tagName === 'A') {
+                document.querySelectorAll('a').forEach(item => item.style.backgroundColor = 'blanchedalmond')
+                e.target.style.backgroundColor = 'green'
+                deleteImgDiv()
+                let dataList
+                if(dataset.index == 'all') {
+                    dataList = data
+                }
+                else if(dataset.index == '01000') {
+                    dataList = data.filter(item => 1000 > item.number && item.number > 0)
+                }
+                else if(dataset.index == '100010000') {
+                    dataList = data.filter(item => item.number > 1000 && item.number < 10000)
+                }
+                else if(dataset.index == '10000+') {
+                    dataList = data.filter(item => item.number > 10000)
+                }
+                dataList.forEach((item, index) => {
+                    createImgDiv(item, index)
+                })
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

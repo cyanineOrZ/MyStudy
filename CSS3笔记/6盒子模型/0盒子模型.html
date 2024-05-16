@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+        盒子模型
+
+        盒子模型由四部分组成
+        一、margin外边距
+        外边距不会被盒子撑开，但是会有margin塌陷的问题
+
+        1.1、margin塌陷
+        margin塌陷指盒子模型中，当父容器和子元素同时设置margin时
+        子元素部分的margin无法生效。
+        在浏览器中，为了简化操作，margin部分会直接取盒子模型中的最大值。
+        也就是说，谁定的margin值大， 谁就生效。
+
+        如何解决
+        通过给父元素添加overflow：hidden 触发BFC
+
+        1.2、margin合并
+        在盒子模型中，对于不同的父容器或子元素之间的margin 有可能会被合并
+        如
+        margin-top 与 margin-bottom就有可能会被合并，从而达不到两个外边距的效果
+
+        解决办法
+        1、触发BFC（一般不建议在margin合并中使用BFC解决）
+
+        2、合并margin ，将margin-top的值赋予margin-bottom
+
+        */
+
+        /*  
+        二、border边框
+
+        三、padding内边距
+        注意，内边距会影响盒子的实际大小，会将盒子撑开
+
+        四、content内容
+        */
+
+        /* 
+        这是写css时必须配置的配置，用以清除部分样式自带的边距
+        * {
+            margin： 0;
+            padding： 0;
+        }
+        */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

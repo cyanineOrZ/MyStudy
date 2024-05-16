@@ -1,0 +1,64 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date内置对象， 常用于日期方面的操作
+
+        // Date和Math不一样， Date只能通过构造函数实例化一个Date对象后才能使用
+        // 而Mate内置对象不需要
+        const date = new Date();
+        console.log(date);
+        // 如果构造函数构造时没有参数，则返回当前系统的当前时间
+    </script>
+
+    <script>
+        // 参数常用的写法
+        // 数字型 2019 10 1(注意，月份从0代表一月，可以想象成一个月份是一个数组， 日不会)
+        // 当提供了至少两个参数， 其余参数均会默认设置为1 或者 0
+        const test = new Date(2019, 9, 1)
+        console.log(test);
+
+        // 字符串型
+        const test1 = new Date("2019-10-01")
+        console.log(test1);
+    </script>
+
+    <script>
+        // 1、getDate() 
+        // 根据日期对象， 返回指定对象的日期数据（只有哪一日） 返回值的类型为 Number
+        const day = test.getDate()
+        console.log(day);
+        console.log(typeof(day));
+    </script>
+
+    <script>
+        // 2、getDay()
+        // 根据日期对象， 返回指定对象的日期所在的星期的第几天， 返回值的类型为Number
+        // 注意，这里和月份一样， 将一个星期视为一个数组， 从0 开始为 星期一
+        const testday = test.getDay();
+        console.log(testday);
+        console.log(typeof(testday));
+        // 注意和getDate()作区分
+    </script>
+
+    <script>
+        // 3、getFullYear()
+        // 根据日期对象， 返回指定对象的年份数据
+
+        // 4、getMonth()
+
+        // 5、getHour()
+
+        // 6、getMinutes()
+        
+        // 7、getMilliseconds()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

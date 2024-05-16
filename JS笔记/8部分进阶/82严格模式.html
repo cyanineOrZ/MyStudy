@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 严格模式是JavaScript自带的配置，要求开发者书写JavaScript代码时， 必须按照严格的样式进行书写
+
+        // 1、变量必须初始化， 并且必须先声明， 并且赋值后才能使用， 并且变量无法被删除
+
+        // 2、函数必须先声明，再使用， 并且函数无法被删除
+
+        // 3、无法给不可拓展对象或者只读对象进行赋值，比如null，
+        // 不可拓展对象：比如给null赋值，就会抛出类型异常
+        // 只读对象：对象中只提供了该成员变量的get方法，该成员变量对于该对象是私有的， 此时对该成员变量赋值， 就会抛出类型异常错误
+        
+        // 4、严格模式不能删除任何不可删除的对象，比如原型链
+
+        // 5、严格模式要求函数参数名为唯一，一个函数中，不能出现重名的参数
+
+        // 6、严格模式禁止8进制
+
+        // 7、严格模式禁止改变JavaScript数值类型的基本属性， 也就是不能改变JavaScript的基础数值对象的属性，包括引用数据类型和基本数据类型（基本数据类型也包括基本包装类型）
+
+        // 8、严格模式下，eval不会再为上层代码块声明和创建变量（eval函数不推荐使用，即使是非严格模式下）
+
+        // 9、严格模式下新增了部分关键字，包括 implements， interface， let， package， private， protected， public， static， yield
+
+        // 
+    </script>
+
+    <script>
+        // 启用严格模式
+        "use strict";
+    </script>
+</body>
+</html>

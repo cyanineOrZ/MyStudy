@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 事件是一种触发响应的机制，它可以是用户点击后的交互动作， 也可以是文档加载， 窗口滚动等
+
+        // 事件被封装成一个对象， 也叫事件对象， 该事件对象包括了事件的所有相关信息 还有事件可以进行的方法
+
+        // 最基础的时间监听：ObjectName.addEventListener('事件类型', '要执行的函数')
+
+        // 事件监听分为三部分组成：事件源， 事件类型， 事件处理程序
+    </script>
+
+    <button id="test"></button>
+    <script>
+        // 事件源：事件被触发的对象
+        var btn = document.getElementById('test');
+        // 上述的btn就是事件源
+
+
+        // 事件类型：事件是如何触发的
+        btn.onclick = function() {
+            alert('woc')
+        }
+        // 上述的onClick就是事件类型
+
+
+        // 事件处理程序：事件是如何处理的
+        // 上述的Alert("")便是触发事件后，事件的处理
+
+    </script>
+
+    <input type="button" id="test1" onclick="test()">
+    <input type="button" id="test2">
+    <input type="button" name="" id="test3">
+    <script>
+        // 事件绑定一共有三种方式
+        // 1、在DOM中直接绑定(例test1) 也即 行内事件
+        function test() {
+            alert('test1')
+        }
+
+        // 2、在JavaScript中进行直接绑定  也即 DOM L0 L1 事件
+        const test2 = document.querySelector('#test2') 
+        test2.onclick = function() {
+            alert("test2")
+        }
+
+        // 3、在JavaScript中通过绑定事件监听函数进行绑定 也即 DOM L2 L3事件
+        const test3 = document.querySelector('#test3')
+        test3.addEventListener("click", function() {
+            alert("test3")
+        })
+
+
+        // 不同类型的事件也有不同的机制
+
+        // 行内事件的this指针指向的是window
+
+        // DOM 0 IE 事件的对于同类型（比如click事件）只能绑定一次
+
+        // DOM 2 3 事件对于同类型事件可以绑定多次， 并可以进行事件捕获
+    </script>
+    
+
+    <script>
+        // 接触事件监听removeEventListener
+        test3.removeEventListener()
+    </script>
+
+    <script>
+        // 事件类型
+        // 一、鼠标事件
+        // click 点击事件
+        // doubleclick 双击事件
+        // mousedown 鼠标按下（按下时触发，不同于点击）
+        // mouseup 鼠标弹开（即鼠标按下后摊开）
+        // mouseover 鼠标经过
+        // mouseout 鼠标移开
+        // mousemove 鼠标失去焦点
+
+        // mouseenter 鼠标进入（鼠标经过的无冒泡模式）
+        // mouselevea 鼠标离开（鼠标离开的无冒泡模式）
+
+        // 二、键盘事件
+        // keydown 键盘按下
+        // keyup 键盘弹起
+        // keypress 键盘输入
+
+        // 三、表单事件
+        // change 
+        // select 表单选择
+        // submit 表单提交
+
+        // 四、页面事件
+        // load 页面加载事件
+        // unload 页面加载完成事件
+        // resize 页面大小监听（会频繁触发， 建议配合setTimeout使用）
+        // scroll 页面滚动事件
+    </script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

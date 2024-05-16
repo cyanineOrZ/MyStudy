@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <!-- 
+        
+    v-model:属于一个双向绑定的指令语法，只能应用在表单类元素里（如input等输入类元素）
+
+    ps：（都拥有value属性的元素）
+
+    简写形式：v-model=“”，去除了冒号和value
+
+    -->
+
+    <!-- vmodel 提交表单数据 -->
+
+    <div id="root">
+        <form action="">
+
+            text1:<input type="text" v-model="text1" name="" id=""><br>
+
+            <!-- number修饰符，vmodel只接收number -->
+            text2:<input type="text" v-model.number="text2" name="" id=""><br>
+
+            <!-- trim修饰符，vmodel会将接收到的字符串的前后的空格删除，但字符串中间不会 -->
+            text3:<input type="text" v-model.trim="text3" name="" id=""><br>
+
+            <!-- lazy修饰符，当输入框失去焦点时，vmodel再收集数据 -->
+            text4:<input type="text" v-model.lazy="text4" name=""><br>
+            
+            <!-- v-model绑定radio时，需要对input框的radio先输入value才能获取值 -->
+            radio1:<input type="radio" name="sex" id="" v-model="radio" value="nan"><br>
+            radio2:<input type="radio" name="sex" id="" v-model="radio" value="nv"><br>
+
+            <!-- checkbox 需要提前对data中的数据进行初始化 一般使用数组 -->
+            checkbox1：<input type="checkbox" v-model="checkbox" name="" id="" value="0"><br>
+            checkbox2：<input type="checkbox" v-model="checkbox" name="" id="" value="1"><br>
+            checkbox3：<input type="checkbox" v-model="checkbox" name="" id="" value="2"><br>
+
+            
+            select:<select name="" id="" v-model="select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+            <!-- //输入框 -->
+            textarea：<textarea name="" id="" cols="30" rows="10" v-model="textarea" >102</textarea><br>
+
+            checkbox：<input type="checkbox" name="" id="" v-model="checkbox2" value=false><br>
+        </form>
+    </div>
+
+    <script>
+
+        // 通过v-model提交表单中的全部元素
+
+        new Vue({
+            el: "#root",
+
+            data: {
+                text1: "",
+                text2: 0,
+                text3: "",
+                text4: "",
+                radio: "",
+                checkbox:[],
+                select: "",
+                textarea: "",
+                checkbox2: true,
+            }
+        })
+    </script>
+</body>
+</html>

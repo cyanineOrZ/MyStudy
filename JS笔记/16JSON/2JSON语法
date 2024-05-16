@@ -1,0 +1,28 @@
+JSON语法
+
+JSON语法是JavaScript对象表示语法的子集。
+
+JSON对象
+{
+    "AttributeName": value
+}
+
+JSON数组
+[
+    value, value, ……,
+]
+
+JSON值
+    String
+    Number
+    Object
+    Array
+    Boolean
+    Null
+
+JSON键值对
+key: value
+注意key 是以 String 的形式存在
+
+JSON也可以对象中嵌套对象， 数组中嵌套数组
+

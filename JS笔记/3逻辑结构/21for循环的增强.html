@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- for循环拥有5中写法 -->
+    <script>
+        // 1、常规for循环 for() {}
+    </script>
+
+    <script>
+        // 2、 for……in 循环  for in 是在ES5时新增的， 可以任意迭代一个对象的除symbol以外的可枚举属性
+        var arrTest = [1, 2, 3, 4, 5, 6, 7 ,8, 9]
+        for(let i in arrTest) {
+            console.log(i);
+            // 这里输出的是 0 - 8
+        }
+
+        const obj = {
+            name: "woc",
+            age: 17,
+            sex: "mmp",
+            getMoney: () => {
+                console.log("傻波依");
+            }
+        }
+        for(let i in obj) {
+            console.log(i);
+            // 这里输出的是 name， age, sex， getMoney
+        }
+        // for in 是专门用来进行枚举的， 所谓枚举， 就是将数组等可枚举对象的 key 进行遍历， 在数组中， key就是元素的index, 在对象中， key就是成员变量和成员方法的名字。
+        // for in 的缺点是会遍历到其原型链上， 除了键值对以外都不好用 
+    </script>
+
+    <script>
+        // 3、 for of 循环， ES6新增 对于可迭代对象， 创建一个迭代循环， 调用自定义迭代钩子， 并为不同属性的值执行语句
+
+    </script>
+
+    <script>
+        // 4、for await of 循环， 这个循环很少用
+    </script>
+
+    <script>
+        // 5、for Each 循环，for 循环增强版， 可以处理数组中未被初始化的值， 并且能够将循环到的值返回到回调函数里。
+        // 没有返回值
+        const arrTest1 = [1, 2, 3, 4, 5]
+        const arrTEst2 = [1, , 3, 5, 6, , , 9]
+        console.log('普通for');
+        for(let i = 0; i < arrTest1; i++) {
+            console.log(arrTest1[i]);
+        }
+        for(let i = 0; i < arrTEst2.length; i++)  {
+            console.log(arrTEst2[i]);
+        }
+        console.log("可以看到，for循环无法处理未被初始化的数组对象");
+        console.log("forEach");
+        
+        arrTest1.forEach((item, index) => {
+            console.log(item);
+            console.log(index);
+        })
+        // 可以看到， forEach 循环可以处理数组中未被初始化的对象
+
+        // forEach循环对象
+        const obb = {
+            name: "name",
+            age: "age",
+            sex: "sex"
+        }
+        Object.keys(obb).forEach((key) => {
+            console.log(key);
+            console.log(obb[key]);
+        })
+    </script>
+
+    <script>
+        // map遍历
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root" style="width: 100%;height: 100%;background-color: palegreen;">
+
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#root",
+
+        data() {
+            return {
+
+            }
+        },
+
+        comments: {
+
+        },
+
+        beforeRouteEnter (to, from, next) {
+            alert("入口路由守卫被触发")
+            next()
+        },
+
+        beforeRouteLeave (to, from, next) {
+            alert("出口路由守卫被触发")
+            next()
+        },
+    })
+</script>
+</html>

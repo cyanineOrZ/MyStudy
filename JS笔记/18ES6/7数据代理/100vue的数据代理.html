@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        // 1、model层的data是存放在vm中，可以在控制台中访问，访问方式为vm._data(不是vm.data)
+
+
+    </script>
+
+    <script>
+        // 通过vm对象，对model层的属性进行操作，就是vue的数据代理
+        
+        // 展开来说，就是
+        // vue的数据代理，就是vm通过对data对象或者函数的深度遍历，将data中每个一成员变量和方法通过Object.defineProperty()映射到vm
+        // 并且添加getter和setter， 在view对某个对象的属性值进行读取或修改时，通过getter或者setter对model层的数据进行修改
+        // vm和data之间的互通就是vue的数据代理
+
+        // Vue通过对Model层的用户数据data封装为Vue内部的数据时做了数据代理，对每一个在data返回的对象中的属性，都添加了
+        // getter和setter， 
+
+
+        // 数据劫持
+    </script>
+</body>
+</html>

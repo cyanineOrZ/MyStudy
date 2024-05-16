@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // then返回的promise对象的状态和值取决于其回调函数的返回值和状态
+
+
+        const promisetest = new Promise((resolve, reject) => {
+            resolve("100")
+        })
+        // promise.then()的返回对象也是一个promise对象，也拥有状态
+
+        // 1、当then的回调函数中抛出了错误，then返回的promise对象的状态为失败
+
+        const throwtest = promisetest.then((value) => {
+            throw("err")
+        })
+
+        console.log(throwtest);
+
+
+        // 2、当then回调函数返回的是一个非promise对象的数值时，then返回的promise对象的状态为成功，并且promise的结果为该数值
+        const numbertest = promisetest.then((value) => {
+            return 100
+        })
+
+        console.log(numbertest);
+
+        // 3、当then回调函数返回的是一个promise对象时，与promise.resolve和promise.reject类似
+        // 如果回调函数返回的是一个成功的promise，则then也返回一个成功的promise，then返回的promise的值为回调函数成功的传入值
+        const successTest = promisetest.then((value) => {
+            return new Promise((resolve, reject) => {
+                resolve("200")
+            })
+        })
+
+        console.log(successTest);
+    </script>    
+</body>
+</html>

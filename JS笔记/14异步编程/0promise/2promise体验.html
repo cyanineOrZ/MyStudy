@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // promise格式
+
+        /**
+         * 首先创建一个promise对象，封装一个异步任务
+         * 
+         * 异步任务作为一个回调函数封装入promise中（此时异步任务的调用者为window，执行者为promise）
+         * 
+         * 当异步任务成功执行时，resovle会将promise对象的状态修改为成功，反之则由reject修改为失败
+         * 
+         * function内部的参数为回调函数（调用者为window，执行者为function（异步任务回调函数）），function为异步任务，
+        */
+        const promiseTest = new Promise(function(resolve, reject) {
+            console.log(this);
+            const res = Math.floor(Math.random() * 10)
+            if(res <= 5) {
+                resolve(100)
+            }
+            else {
+                reject(120)
+            }
+
+        })
+
+        // 当promise中的异步任务的前提执行完毕后，根据前提执行得到的结果，来进行下一个操作，第一个function（value）为异步任务成功时进行的操作
+        
+        // 第二个function（values）为异步任务失败时进行的操作
+
+        // 此时不同结果进行的任务也都是异步任务，所以其为异步模式执行
+        promiseTest.then(function (value) {
+            console.log(this);
+            console.log(value);
+            console.log("success");
+        },
+        function (values) {
+            console.log(this);
+            console.log(values);
+            console.log("fail");
+        })
+
+
+    </script>
+
+</head>
+<body>
+    <button id="button">
+        点这里
+    </button>
+
+    <script>
+        const button = document.getElementById('button')
+
+        function rand() {
+            return Math.floor(Math.random() * 10)
+        }
+
+        button.addEventListener('click', () => {
+            setTimeout(() => {
+                let res = rand()
+                console.log(res);
+                if(rand <= 3) {
+                    alert("恭喜你，中奖了")
+                }
+                else {
+                    alert("很抱歉，没中奖")
+                }
+            }, 1000);
+        })
+
+        // 实例化一个promise对象
+        const proTest = new Promise((resolve, reject) => {
+            
+        })
+
+
+
+        setTimeout(() => console.log("代码开始执行"), 0);
+			new Promise((resolve, reject) => {
+				console.log("开始for循环");
+				for (let i = 0; i < 10000; i++) {
+					i == 99 && resolve();
+				}
+			}).then(() => console.log("执行then函数"));
+			console.log("代码执行结束");
+
+            
+    </script>
+</body>
+</html>

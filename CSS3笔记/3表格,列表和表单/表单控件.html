@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+        表单控件有多个
+
+        <input> 输入框
+        用于手机用户信息， 非常重要        
+        
+        type：
+        用于指定不同的input控件类型
+        button ： 按钮， 
+        checkbox ： 复选框
+        file ： 文件上传使用
+        hidden ： 定义隐藏的输入字段， 在输入时字段不会显示
+        image ： 图片
+        password ： 密码字段， 在输入时， 字段的字符会被掩盖
+        radio ： 定义单选按钮
+        reset ： 重置按钮， 清楚表单内的所有数据
+        submit ： 提交按钮， 会将表单数据 根据 表单域的 发送模式 传送数据到服务器端
+        text ： 文本输入框， 拥有默认输入宽度， 为 20个 字符
+
+
+
+        label标签
+        label标签为input元素定义标注，用于绑定一个表单元素， 当点击label标签内的文本或者图片时，浏览器就会
+        自动将焦点转到label对应的表单元素上面， 来增加用户体验
+        例
+        form
+            <input type='radio' name='这是一个单选框' id='radio'>
+            <label for='radio'>这里是一个复选框</label>
+        label标签通过绑定表单元素的id来进行绑定
+
+
+
+        select下拉表单
+        基本格式
+        <select>
+            <option>选项三</option>
+            <option>选项二</option>
+            <option>选项一</option>
+        </select>
+
+
+        textarea文本域元素
+        文本域可以用于给予用户进行大量输入的区域
+        <textarea></textarea>
+        文本域输入的可更改样式非常多，详解可看文本域
+        */
+    </style>
+</head>
+<body>
+    <form action="">
+        <p>这是butto模式</p>
+        <input type="button">
+        <p>这是checkbox模式</p>
+        <input type="checkbox">
+        <p>这是file模式</p>
+        <input type="file">
+        <p>这是hidden模式</p>
+        <input type="hidden">
+        <p>这是image模式</p>
+        <input type="image">
+        <p>这是password模式</p>
+        <input type="password">
+        <p>这是radio模式</p>
+        <input type="radio">
+        <p>这是reset模式</p>
+        <input type="reset">
+        <p>这是submit模式</p>
+        <input type="submit">
+        <p>这是text模式</p>
+        <input type="text">
+
+        <p>这里是label的使用</p>
+        <input type='radio' name='这是一个单选框' id='radio'>
+        <label for='radio'>这里是一个复选框</label>
+
+        <p>这里是select的使用</p>
+        籍贯：
+        <select name="" id="">
+            <option value="">山东</option>
+            <option value="">广东</option>
+        </select>
+
+        <p>这里是文本域textarea的使用</p>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </form>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+
+        <!-- 点击添加数据 -->
+        <button @click="increase($event)">dianwozengjia</button>
+        
+        <input type="text" name="" id="search" placeholder="模糊搜索">
+
+        <button @click="getInput($event)">点击搜索</button>
+
+        <ul>
+            <li v-for="(person, index) in newArray" :key="person.id">
+                {{person.id}} - {{person.name}}
+            </li>
+        </ul>
+
+        <div style="height: 20px; background-color: aqua;"></div>
+
+        <input type="text" name="" id="comSearch" placeholder="计算模糊搜索">
+
+        <button @click="getComInput($event)">计算模糊搜索</button>
+
+        <ul>
+            <li v-for="(person, index) in newComArray" :key="person.id">
+                {{person.id}} - {{person.name}}
+            </li>
+            
+        </ul>
+
+        
+    </div>
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: {
+                input: "",
+                comInput: "",
+                persons: [
+                    {id: 1,name: "1233214"},
+                    {id: 2,name: "1233215"},
+                    {id: 3,name: "1233216"},
+                ],
+                newArray: null,
+            },
+
+            methods: {
+                // 添加数据方法
+                increase: function() {
+                    this.persons.unshift({
+                        id: 4,
+                        name: "az"
+                    })
+                },
+
+                // 获取输入框的值，并返回
+                getInput: function() {
+                    this.input = document.querySelector("#search").value
+                },
+                
+                // 
+                getComInput: function() {
+                    this.comInput = document.querySelector("#comSearch").value
+                }
+            },
+
+            // 模糊搜索功能优先使用computed
+            computed: {
+                newComArray: function() {
+                    return this.persons.filter((item) => {
+                        return item.name.indexOf(this.comInput) !== -1
+                    })
+                }
+            },
+
+            watch: {
+                input: {
+                    // 立即初始化
+                    immediate: true,
+                    // 过滤数据
+                    handler(value) {
+                            this.newArray = this.persons.filter((item) => {
+                            return item.name.indexOf(value) !== -1
+                        });
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

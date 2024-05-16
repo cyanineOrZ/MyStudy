@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定时器分为两种，一种是间隔定时器 一种是暂停函数
+        // 如果某部分代码需要在一定时间后重复执行， 就需要定时器
+    </script>
+
+    <script>
+        // 一、间歇函数 setInterval
+        // setInterval(函数， 间隔时间)   间隔时间的单位为ms（毫秒）， 
+        // 该函数的意思就是每隔多少时间， 就执行该函数
+        // setInterval(function() {
+        //     console.log('woc');
+        // }, 1000);
+
+        // ps:间隔函数启用后就不能自动停用， 可以手动关闭
+        
+        // 间隔定时器存在返回值， 该返回值为定时器的唯一标识id
+        // id不从0开始， 从1开始
+        // li
+        // let a = setInterval(function() {
+        //     console.log("woc1");
+        // }, 1000)
+        // console.log(a);
+
+        // 关闭间隔函数 (根据定时器id来关闭定时器)
+        // clearInterval(Interval.id)
+    </script>
+
+    <script>
+        // 二、暂停函数 setTimneout
+        // setTimeout(函数， 暂停时间) 暂停时间同间隔函数，为ms
+        // 该函数的意思是， 停止多少毫秒时间后， 进行该函数
+
+        // setTimeout(function() {
+        //     alert('woc')
+        // }, 10000)
+
+        // setTimeout 和 setInterval 最大的区别是： setTimeout是用于一次暂停， 并且触发后不会再次触
+        //                                         setInterval用于自动， 无法自动暂停
+    </script>
+
+
+<!-- 计时器案例-->
+    <div style="display: flex; justify-content: space-around; align-items: center; height: 200px; width: 500px;" id="contain">
+        <button style="height: 100px; width: 200px;" id="btn">重新计时</button>
+        <p style="height: 100px; width: 200px; line-height: 100px; background-color: aqua; text-align: center; font-size: large;" id="p"></p>
+    </div>
+    <script>
+        const contain = document.querySelector('#contain')
+        const btn = contain.querySelector("#btn")
+        const p = contain.querySelector("#p")
+
+        p.innerHTML = 10
+
+        btn.addEventListener("click", function() {
+            p.innerHTML = 10
+        })
+        setInterval(function() {
+            if(p.innerHTML != 0) {
+                p.innerHTML = p.innerHTML - 1
+            }
+            else {
+                setTimeout(function() {
+                    p.innerHTML = 10
+                }, 1000)
+            }
+        }, 1000)
+    </script>
+</body>
+</html>

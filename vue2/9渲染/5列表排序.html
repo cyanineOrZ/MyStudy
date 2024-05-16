@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <ul>
+            <li v-for="(person, index) in pee" :key="person.id">
+                {{person.id}} - {{person.name}} - {{person.age}}
+            </li>
+        </ul>
+
+        <input type="text" name="" id="search">
+        <button @click="getSearchValue($event)">mohusousuo</button>
+        
+        <button @click="getSort($event)" value="up">up排序</button>
+        <button @click="getSort($event)" value="down">down排序</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: {
+                fliter: "",
+                sortMode: "",
+                persons: [
+                    {id: 1, name: "woc1", age: 12},
+                    {id: 2, name: "woc2", age: 17},
+                    {id: 3, name: "woc3", age: 15},
+                    {id: 4, name: "woc4", age: 15},
+                    {id: 5, name: "woc5", age: 16},
+                ]
+            },
+
+            computed: {
+                pee: function() {
+                    const newArray = this.persons
+
+                    console.log(this.sortMode);
+
+                    if(this.sortMode === 'up') {
+                        newArray.sort((a, b) => {
+                            return b.age - a.age
+                        })
+                    }
+                    else if(this.sortMode === 'down') {
+                        newArray.sort((a, b) => {
+                            return a.age - b.age
+                        })
+                    }
+
+                    return newArray
+                }
+            },
+
+            methods: {
+                getSearchValue: function(event) {
+                    this.fliter = document.querySelector("#search").value
+                },
+
+                getSort: function(event) {
+                    console.log(event.target.value);
+                    this.sortMode = event.target.value
+                }
+                
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // 由于Vue会获取带有指令【包括自定义指令】的标签，并将其重新解析，就会造成该节点会重新放入页面，无法让默认的，想无法继续页面加载后就立即执行
+    new Vue({
+        el: "#root",
+
+        data: {
+
+        },
+
+        directives: {
+            // 一个指令的定义对象可以提供几种钩子函数【钩子函数其实就是自定义指令内的Vue预先定义和自定义的指令函数】
+
+            // 什么是钩子函数【Vue自带的钩子函数：bind， inserted， update】
+            /**
+             * bind函数， 当指令与元素成功绑定时，所执行的钩子函数
+             * 
+             * inserted函数， 当指令所在的元素被重新解析后插入页面时，所执行的钩子函数
+             * 
+            */
+
+            // 钩子函数中含有什么【el， binding， vnode， prevNode】
+            /**
+             * el：指令绑定到的元素， 用于直接定位和直接操作DOM
+             * 
+            */
+
+            /**
+             * 自定义指令中，钩子函数的this都会不会指向vm， 也不会指向vm， 只会指向window【因为要操纵Dom】
+             * 
+            */
+
+            bind: function() {
+
+            }
+        }
+    })
+    
+    /**
+     * 全局自定义指令
+    */
+
+    Vue.directive("name", {
+        bind() {
+
+        },
+
+        inserted() {
+
+        },
+
+        updated() {
+            
+        },
+    })
+</script>
+</html>

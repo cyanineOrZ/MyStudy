@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <div style="width: 200px; height: 100px; background-color: aqua; border: 1px solid black;"></div>
+
+        <div style="height: 2px; background-color: black;"></div>
+
+        <div :style="test"></div>
+        
+        <ul>
+            <li v-for="test in list" :key="test.id">
+                <div>
+                    <button>
+                        {{test.text}}
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // 绑定内联样式只有一种方法，通过对象绑定法来进行对需要改变的标签的style属性进行绑定
+
+        // 如果一个样式需要多个对象实现，则可以使用数组嵌套对象来实现
+        new Vue({
+            el: "#root",
+            
+            data: {
+                test: {
+                    height: 200 + "px",
+                    width: 100 + 'px',
+                    background: 'aqua'
+                },
+
+                list: [
+                    {id: 1, text: "WW"},
+                    {id: 2, text: "OO"}
+                ]
+            },
+
+            methods: {
+                
+            },
+        })
+
+
+
+        // 自动前缀：当你在 :style 中使用了需要浏览器特殊前缀的 CSS 属性时，Vue 会自动为他们加上相应的前缀。
+
+        // 样式多值：如果一个标签中的一个属性拥有多个样式值，则会取最后一个读取到的值
+    </script>
+</body>
+</html>

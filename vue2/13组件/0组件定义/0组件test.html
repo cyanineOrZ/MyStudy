@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <button-test></button-test>
+    </div>
+</body>
+
+<!-- 这里定义一个组件，用来按 -->
+<script>
+    /**
+     * 有个报错，template or render are not defined， 这里说明组件一定要拥有这两者之一
+    */
+    Vue.component("button-test", {
+        data() {
+
+            // 组件间的count或者说data是相互独立的，组件只维护自身的data，不会去维护其他的
+            return {
+                count: 0
+            }
+        },
+
+        methods: {
+            countTest: function() {
+                this.count = this.count + 1
+                alert("xiangjia1")
+            }
+        },
+
+        template: '<button @click="countTest($event)">dianwo {{ count }} times</button>'
+    })
+    
+    new Vue({
+        el: "#root"
+    })
+</script>
+
+</html>

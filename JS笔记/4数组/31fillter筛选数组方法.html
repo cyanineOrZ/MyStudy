@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // filter() 方法可以创建一个新的数组， 新数组中的元素是原数组中符合条件的所有元素
+
+        // filter() 相当于一个简单的 for if 操作
+
+        // 旧例， 筛选出一个小于20的数组
+        const arrOld = [1, 2, 3, 5, 7, 9, 12, 15, 18, 22, 26, 30, 35, 40, 45]
+        const arrNew0 = []
+        for(let i = 0; i < arrOld.length; i++) {
+            if(arrOld[i] < 20) {
+                arrNew0.push(arrOld[i])
+            }
+        }
+        console.log(arrNew0);
+
+        // 新例
+        const arrNew1 = arrOld.filter(function(item) {
+            return item < 20
+        })
+        console.log(arrNew1);
+
+        // 用箭头函数也一样
+        const arrNew2 = arrOld.filter(item => item < 20)
+        console.log(arrNew2);
+
+        
+    </script>
+</body>
+</html>

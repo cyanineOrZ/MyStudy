@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        Key是Vue里面最重要的非浏览器自带的虚拟属性之一，主要用于对虚拟DOM进行唯一标识
+
+        persons: [
+            {
+                id: 1,
+                name: "W"
+            },
+            {
+                id: 2,
+                name: "o"
+            },
+            {
+                id: 3,
+                name: "c"
+            },
+        ]
+
+        1、在Vue里面，Vue实例拿到数据后，解析数据，生成虚拟DOM，如上为persons数组和数组中的每个对象
+
+        2、并且Vue会依据页面的中相关标签对key的配置，来为虚拟DOM生成一个标识符（对Vue来说，这个就是虚拟DOM的唯一标识符）
+        当没有配置时，
+
+        如果key一样，则
+
+        3、解析完毕数据，Vue生成真实DOM，并将结果返回给页面
+
+        上面三步为初始化，当页面第一次载入或者数据发生变化时，都会进行初始化
+
+        4、当Vue检测到数据发生改变时，再次解析数据，并生成虚拟DOM
+
+        5、将旧数据的虚拟DOM和新生成的虚拟DOM放入diff算法中，进行虚拟DOM之间的比较（通过key唯一标识符进行一一比较）
+
+        6、当key相同的两个虚拟DOM中的数据（每个DOM中的全部节点，属性等进行比较）相样时，Vue会使用新的虚拟DOM
+
+        7、当key相同的两个虚拟DOM中的数据完全相同时，Vue会复用这个虚拟DOM
+
+        8、diff算法结合新生成的虚拟DOM和复用的虚拟DOM，Vue根据得到的虚拟DOM生成新的真实DOM，替换以前的真实DOM，并将结果返回页面
+
+        这就是Vue 虚拟DOM和diff算法的简单描述
+
+
+
+     -->
+</body>
+</html>

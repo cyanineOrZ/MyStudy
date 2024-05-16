@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 节点操作主要是优化DOM节点的获取操作，节点操作的根源来自于DOM树，DOM树一定要牢记
+
+        // 利用父子兄关系获取元素节点
+    </script>
+
+    <div id="grandfather">
+        <div id="father">
+            <div id="son">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div id="borther"></div>
+    </div>
+
+    <script>
+        // 1、获取父节点 parentNode
+        // 得到的是离调用节点最近的父节点, 没有父节点返回null
+        const son = document.querySelector("#son")
+        const fateht = son.parentNode
+        console.log(son);
+        console.log(fateht);
+    </script>
+
+    <script>
+        // 2、获取子节点 childNode
+        // 得到的是离调用节点最近的子节点， 没有则返回null
+        // 注意，获取子节点时会将该元素下的全部子节点获取，返回的是一个伪数组， 并且会返回全部的节点（包括文本节点和元素节点）
+        const father = document.querySelector("#father")
+        const son1 = fateht.childNodes
+        console.log(fateht);
+        console.log(son1);
+        // 输出为 [text, div#son, text] 因为有换行符的存在
+
+        // 获取子元素节点 children
+        const son2 = fateht.children
+        console.log(son2);
+        // 仅获取id为son的元素节点
+    </script>
+
+    <script>
+        // 3、获取第一个最后一个子节点   第一个子节点 firstchild   最后一个子节点lastNode 
+                                //     第一个子元素节点 firstElementchild   最后一个子元素节点 lastElementchild
+        const ul = document.querySelector("#son").querySelector('ul')
+        console.log(ul.firstChild);
+        // 输出为#text
+        console.log(ul.lastChild);
+        // 输出为#text
+    </script>
+    
+
+    <script>
+        // 获取兄弟节点 下一个兄弟节点 nextSibling  前一个兄弟节点 previousSibling
+        //             下一个元素兄弟节点 nextElementSibling  前一个元素兄弟节点 previousElementSibling
+        const borther = fateht.nextElementSibling
+        console.log(borther);
+
+
+        // 注意，以上直接获取元素节点的都是HTML5新增的， 对ie9以前的浏览器没有用
+
+    </script>
+    <div style="display: flex; justify-content: center; align-items: center; width: 500px; height: 100px;">
+
+    </div>
+</body>
+</html>

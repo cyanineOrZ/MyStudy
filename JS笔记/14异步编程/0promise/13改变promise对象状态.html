@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、调用相对应的回调函数，改变其状态
+        
+        const promiseTest1 = new Promise((resolve, reject) => {
+            // 直接调用resolve()，会让promise对象状态改变为成功
+            resolve()
+        })
+        console.log(promiseTest1);
+
+        const promiseTest2 = new Promise((resolve, reject) => {
+            // 直接调用resolve()，会让promise对象状态改变为成功
+            reject()
+        })
+        console.log(promiseTest2);
+
+        
+        
+        // 2、抛出错误
+        // 抛出错误会直接将promise状态改为失败
+        const promiseTest3 = new Promise((resolve, reject)=> {
+            throw("err")
+        })
+        console.log(promiseTest3);
+    </script>
+</body>
+</html>

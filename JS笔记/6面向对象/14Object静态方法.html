@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            a: "a",
+            b: "b",
+            c: "c",
+            d: function() {
+                console.log(d);
+            }
+        }
+        // 1、Object.keys(ObjectName) 获取对象的全部成员变量以及成员方法的名， 也就是获取成员的属性名
+        // 返回一个真数组
+        console.log(Object.keys(obj));
+        
+        // 2、Object.values(ObjectName) 获取对象的全部成员变量以及成员方法的值， 也就是获取成员的属性值
+        // 返回一个真数组
+        console.log(Object.values(obj));
+
+        // 3、Object.assign(NewObjectName, OldObjectName) 对对象进行拷贝，并将旧对象的全部属性复制给新对象
+        // 没有返回值
+        const obj1 = {};
+        Object.assign(obj1, obj)
+        console.log(obj1);
+        
+        // 也可以用于对象新赠属性
+        Object.assign(obj, {e: "e"})
+    </script>
+</body>
+</html>

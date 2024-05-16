@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            margin: 20px;
+            padding: 20px;
+            width: 200px;
+            height: 50px;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .box-sizing1 {
+            box-sizing: content-box;
+        }
+
+        .box-sizing2 {
+            box-sizing: border-box;
+        }
+
+        .box-sizing3 {
+            box-sizing: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="content-box"></div>
+        <div id="border-box"></div>
+        <div id="inherit"></div>
+    </div>
+    <script>
+        // 在Ie浏览器中存在的的独特的盒子模型
+
+        // 什么是怪异盒子模型：一个正常的盒子模型，他的总宽度为 width + padding + border + margin
+                        //                  怪异盒子模型则是 width + margin（width已经包含了width， padding， border）
+
+        // box-sizing就是为了设置盒子的模型模式而存在的， 有三个值：content-box， border-box， inherit
+
+        /**
+         * 1、content-box 标准盒子模型（默认）
+         * 
+         * 2、border-box 怪异盒子模型
+         * 
+         * 3、inherit  继承父盒子
+        */
+
+        const defalutDiv = document.querySelector("#content-box")
+        const borderDiv = document.querySelectorAll("#border-box")[0]
+        const inheritDiv = document.getElementById("inherit")
+        
+        console.log(inheritDiv);
+
+        const divarray = [defalutDiv, borderDiv, inheritDiv]
+        
+        for(let i = 0; i < divarray.length; i++) {
+            divarray[i].classList.add("box", "box-sizing" + (i + 1))
+        }
+    </script>
+</body>
+</html>

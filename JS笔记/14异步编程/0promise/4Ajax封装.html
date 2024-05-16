@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">
+        dianwo
+    </button>
+    <script>
+        const button = document.querySelector("#button")
+
+        // 示例
+
+        button.addEventListener('click', () => {
+            // 构建promise
+            let ajaxPromise = new Promise((resolve, reject) => {
+
+                // 构建xml，创建ajax
+                const xhr = new XMLHttpRequest()
+
+                // 设定请求类型，请求url，请求接口
+                xhr.open("GET", "http://127.0.0.1:8000/test")
+
+                // 有可能会有请求头
+
+                // 设置请求体（GET为空，POST可能为空）
+                xhr.send()
+                
+                // 检测请求状态的变更
+                xhr.onreadystatechange = () => {
+
+                    // 当请求成功发送，并且成功响应
+                    if(xhr.readyState === 4) {
+
+                        // 当请求成功正常处理
+                        if(xhr.status >= 200 && xhr.status < 300) {
+
+                            // 调用成功处理的回调函数
+                            resolve()
+                        }
+
+                        // 请求未被正常处理
+                        else {
+
+                            // 调用请求失败时的回调函数
+                            reject()
+                        }
+                    }
+                }
+            })
+
+            ajaxPromise.then(
+                () => {
+                    console.log("success");
+                },
+                () => {
+                    console.log("fail");
+                }
+            )
+
+        })
+    </script>
+</body>
+</html>

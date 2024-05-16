@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">woc</button>
+    <script>
+
+        // this 关键字是一个指针， 也是一个对象， 名为环境对象， 指向的是函数的当前运行环境
+
+        // 每个常规函数都会拥有this关键字， 
+
+        // 对于this的指向规则， 粗略来说就是谁调用函数， this就指向谁
+        // 比如
+        const btn = document.querySelector('#btn')
+        btn.addEventListener('click', function() {
+            this.style.color = 'red'
+        })
+
+        // 
+    </script>
+
+    <script>
+        // this关键字的指向具体解析
+
+        // 1、在对象方法调用的情况下， this指向调用相关方法的对象， 在没有明确的调用方法的对象时， this指向window 
+    </script>
+
+    <script>
+        // 2、在函数调用的情况下， 指向window  这里主要指DOM L0 L1事件
+    </script>
+
+    <script>
+        // 3、在构造函数调用的情况下， this指向被构造的对象
+    </script>
+
+    <script>
+        // 4、apply, call, bind 的调用情况下， this指向该调用函数的第一个参数
+    </script>
+
+    <script>
+        // 5、在箭头函数的模式下， 在声明时绑定this， 此时this指向箭头函数的上一层， 要注意，箭头函数本身不存在this关键字
+    </script>
+
+    <script>
+        // 6、在严格模式下， 如果没有环境被定义， this 不指向任何东西， 也即this 的值为 undefined
+    </script>
+</body>
+</html>

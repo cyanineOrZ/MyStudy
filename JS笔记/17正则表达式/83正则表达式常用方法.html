@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、str.replace(/正则表达式/, 'str-replace') 查找替换
+        // 在str中使用 正则表达式进行匹配， 把匹配成功的字符串片段替换为 str-replace字符串， 返回替换成功的字符串
+
+        const str = "Hello World"
+        console.log(str.replace(/Hello/, 'Fuck'));
+    </script>
+
+    <!-- 替换敏感词 -->
+    <textarea name="" id="input" cols="30" rows="10"></textarea>
+    <button id="submit">发布</button>
+    <div id="result"></div>
+    <script>
+        const input = document.querySelector("#input")
+        const btn = document.querySelector("#submit")
+        const result = document.querySelector("#result")
+
+        btn.addEventListener("click", function(e) {
+            let str = input.value.replace(/fuck/i, "Hello")
+            result.innerHTML = str
+            e.stopPropagation()
+        })
+    </script>
+</body>
+</html>

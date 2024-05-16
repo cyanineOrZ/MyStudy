@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+
+    <script>
+        /**
+         * ref: 是Vue用来对组件中的标签进行唯一表示的自定义属性
+         * 
+         * 通过$refs.ElementNodeName可以获取对应的节点， 并且也能获取组件实例对象
+        */
+    </script>
+
+    <script>
+        /**
+         * 1、用来给元素或子组件来进行唯一标识
+         * 
+         * 2、获取真实Dom元素，或者获取组件实例对象
+        */
+    </script>
+</body>
+
+<script>
+    const woc = Vue.component("woc", {
+        data() {
+            return {
+                
+            }
+        },
+
+        methods: {
+            say: function() {
+                alert("woc")
+            }
+        },
+
+        template: `<div><button @click='say'>dianwo</button></div>`
+        
+    })
+
+    new Vue({
+        el: "#root",
+
+        data() {
+            return {
+
+            }
+        },
+
+        methods: {
+            talk: function() {
+                console.log(this.$refs.testRef);
+            }
+        },
+
+        components: {
+            woc: woc
+        },
+
+        template:  `<div id="root"><woc ref="testRef"></woc>
+            <button @click="talk">dianwof</button>
+            </div>`
+    })
+</script>
+</html>

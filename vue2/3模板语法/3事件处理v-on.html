@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <!-- 一个最简单的事件绑定 -->
+
+    <!-- 简写形式：@ -->
+
+    <div id="root">
+        <button v-on:click="test()">dianwo</button>
+
+        <!-- $event 为占位符，相当于保留事件对象，如果不输入，就有可能不会被保存 -->
+        <button @click="test1($event, 66)">dianwo</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: {
+
+            },
+
+            methods: {
+
+                // mothods里面的方法，this的指向大部分都是vue【非箭头】，所以mothod里的方法一般不为箭头函数
+
+                // 箭头函数的this一定是window， 因为vue的调用者为window
+
+                test: function(event) {
+                    console.log(event);
+                },
+
+                test1: function(event, value) {
+                    console.log(event, value);
+                },
+            }
+        })
+    </script>
+</body>
+</html>

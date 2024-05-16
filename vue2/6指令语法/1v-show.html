@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+    <script>
+        /**
+         * v-show是一个控制元素是否显型的控制器，通过调用元素的display来控制
+         * 
+         * ps：display和visibility
+         * 
+         * 1、相同点：都可以控制元素是否显形
+         * 
+         * 2、不同点，display控制元素显形的方法是让元素从页面中消失，对页面的布局会有影响
+         *           而visiblity只是将元素隐藏起来，并不会影响布局
+        */
+    </script>
+
+    <div id="root">
+        <div :style="test" v-show="true">
+
+        </div>
+
+        <div :style="test" v-show="false">
+
+        </div>
+
+        
+    </div>
+
+
+    <script>
+
+        new Vue({
+
+            el: "#root",
+
+            data() {
+                return {
+                    test: {
+                        height: 100 + 'px',
+                        width: 200 + 'px',
+                        background: "aqua"
+                    }
+                }
+            },
+
+        })
+    </script>
+</body>
+</html>

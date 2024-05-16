@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    
+
+    <div id="root">
+        <input type="text" name="" id="" v-model="xing">
+
+        <input type="text" name="" id="" v-model="ming">
+        
+        <!-- 插值语法读取 -->
+        <h1>{{methondfullname()}}</h1>
+
+        <!-- 计算属性读取 -->
+        <h1>{{fullname}}</h1>
+    </div>
+    
+    <script>
+        let count = 0
+        let countComputed = 0
+        // 通过methods里面的方法，可以改变h1里面的JavaScript表达式的结果，但是每次改变数值，都会让vue重新解析一次页面，
+        // 而插值语法中的JavaScript表达式在每次解析页面后，都会重新运行一次，这就会造成效率极为低下
+
+        new Vue({
+            el: "#root",
+
+            data: {
+                xing: "zhang",
+                ming: "san",
+            },
+
+            methods: {
+                methondfullname: function() {  
+                    console.log("methods中methondfullname被调用");
+                    return this.xing + this.ming
+                
+                },
+            },
+
+            // 计算属性，通过特殊方式得到的属性以及属性值，并且不搭载在data上
+            computed: {
+                /**
+                 * key: {
+                 *     getter: function() {
+                 *           
+                 *     }
+                 * }
+                */
+
+                // 在计算属性中，this的指向为vm
+
+                fullname: {
+
+                    // 在computed，get只会在第一次加载test1的值时进行调用
+
+                    // 在依赖的值（如这里就是xing和ming）发生改变时，进行调用
+
+                    // fullname虽然是对象，但是在vm中是以键值对的方式搭载，vue会自动读取computed中的getter，并将返回的值赋值给对应的键
+                    get: function() {
+                        console.log("computed被调用");
+                        countComputed = countComputed + 1
+                        return this.xing + this.ming
+                    },
+
+
+                    // 当fullname【computed里的计算对象】被修改时，set会被调用
+                    set: function(value) {
+                        this.fullname = value
+                    }
+                }
+            }
+        })
+
+        /**
+         * 计算属性最佳应用
+         * 
+         * 1、getter内只返回计算属性的值而不做多余的运算
+         * 
+         * 2、只读的计算属性只需要getter
+        */
+    </script>
+
+    <script>
+
+        /**
+         * 计算属性的特点（Computed）
+         * 
+         * 1、支持缓存，提高数据多次更新时的运行速度，只有第一次载入和依赖数据变化时，computed的属性的值才会更新
+         * 
+         * 2、不支持异步，当Computed中存在异步操作时，不会监听数据的变化
+         * 
+         * 3、Computed属性一般都拥有getter和setter，当被调用时，调用getter，改变或者被设定时，调用setter
+         * 
+        */
+    </script>
+
+    <script>
+        /**
+         * 
+         * 
+         * 
+        */
+    </script>
+</body>
+</html>

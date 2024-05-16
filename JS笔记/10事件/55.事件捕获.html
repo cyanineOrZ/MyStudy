@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="father" style="width: 400px; height: 400px; background-color: firebrick;">
+        <div id="son" style="width: 200px; height: 200px; background-color: yellowgreen;">
+        </div>
+    </div>
+    <script>
+        // 事件捕获 是事件流的第一个阶段 当节点事件被触发时， 浏览器会从document根节点开始向下搜寻， 并依次触发与该节点触发事件类型相同的事件， 直至搜寻到出发节点所属元素。
+
+        // 事件捕获 在 事件绑定中是默认绑定 在事件冒泡阶段触发， 并且由于低版本浏览器不支持事件捕获， 所以一般情况下， 事件捕获不会被使用
+
+        // 实例
+    </script>
+
+    <script>
+        const body = document
+        const father = document.querySelector("#father")
+        const son = document.querySelector("#son")
+
+        // 注意,在进行事件监听器绑定时, 要把事件的触发从事件冒泡阶段 改为事件捕获阶段, 这里只需要设置监听器的第三个参数为 true即可 ps(DOM L2 L3事件是默认在事件冒泡阶段触发的)
+
+        body.addEventListener("click", function() {
+            alert("wocbody")
+        }, true)
+
+        father.addEventListener("click", function() {
+            alert("wocfather")
+        }, true)
+
+        son.addEventListener("click", function() {
+            alert("wocson")
+        }, true)
+        
+        // 点击页面空白区域, 只会弹出一个告示
+
+        // 点击大div, 会弹出两个告示
+
+        // 点击小div, 会弹出三个告示 顺序为 wocbody wocfather wocson
+    </script>
+
+    <script>
+        // 阻止事件捕获，通过事件对象阻止
+        // stopPropagation()
+    </script>
+</body>
+</html>

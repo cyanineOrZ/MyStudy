@@ -1,0 +1,19 @@
+类似于Vue中的路由
+Pages.json 是用于配置页面的，其中有
+
+pages:
+[
+    该数据列表用于配置小程序的页面，pages列表中的第一位就是小程序的首页,每一个对象相当于一个页面
+    {
+        "path": 页面的路径,
+        "style": {
+            "navigationBarTitleText": "test",  当小程序在该页面上时，页面顶端的文字
+            "navigationBarBackground": ""
+        }
+    }
+]
+
+// 全局样式
+globalStyle: {
+    
+}

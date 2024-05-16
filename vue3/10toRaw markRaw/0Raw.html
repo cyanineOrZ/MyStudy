@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 
+        取消响应式数据，将其变为原始数据
+
+        toRaw： 还原，将某个响应式数据还原为原始数据，只能处理代理对象Porxy
+
+        markRaw： 标记还原，将某个数据标记为原始数据，其中的数据永远不会被变为响应式数据
+     -->
+    <div id="app"></div>
+</body>
+<script>
+    const app = Vue.createApp({
+
+    }).mount("#app")
+</script>
+</html>

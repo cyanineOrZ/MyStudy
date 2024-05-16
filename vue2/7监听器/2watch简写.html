@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        const vm = new Vue({
+
+            watch: {
+                test: {
+                    handler(newvalue, oldvalue) {
+
+                    }
+                }
+            },
+
+            // 当watch里的被监听的属性，不需要额外配置只需要handler时，就可以简写
+
+            // 简写方式一
+
+            watch: {
+                test(newvalue, oldvalue) {
+
+                },
+            },
+
+            // 简写方式二
+
+            // vm.$watch(test, {
+            //     handel(newvalue, oldvalue) {
+
+            //     }
+            // })
+
+        })
+    </script>
+</body>
+</html>

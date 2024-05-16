@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    短路运算（逻辑中断）时逻辑运算中特殊的一类 逻辑运算符比较特殊 当使用布尔值进行运算时， 其返回值也是布尔值true和false ⭐当使用值包括字符型与数字型进行运算时，其返回值为值 数字型（多用在短路运算） { 在值运算时， 除了0 ''（空字符串） null undefin NaN 其余都为真 } 短路运算原理：当有多个表达式时（逻辑运算一定是多个表达式），左边的表达式可以确定值时，便不再进行运算右边表达式的值 一、逻辑与 的短路运算 逻辑与的表达式为 (表达式1 && 表达式2) 当表达式1为true时
+    则逻辑表达式的 返回值为 表达式2的值
+    <script>
+        var a = 10,
+            b = 20;
+        console.log(123 && a < b); /*输出结果为true，表达式1为真，所以输出表达式2的值*/
+
+        console.log(123 && 456); /*输出结果为456 表达式1为真 输出表达式2的值*/
+
+        console.log(a > b && 123); /*结果为false，表达式1为假，输出表达式1的返回值*/
+
+        console.log(0 && 123); /*输出结果为0 表达式1为假，输出表达式1的值*/
+
+        var num = 0;
+        console.log(123 && num++); /*输出结果为0 表达式1为真，并且返回num的值后再对num进行自增*/
+        console.log(num); /*结果为1 因为后置自增先返回值再进行自增*/
+        /*此时num = 1*/
+
+        console.log(num++ && 123); /*结果为123 表达式1为真(已经进行判断后进行自增)，输出表达式2的值*/
+        console.log(num);
+        /*此时num = 2*/
+
+        //⭐
+        var numk = 0;
+        console.log(numk++ && 456);
+        console.log(numk);
+    </script>
+    当表达式1为false时 则逻辑表达式的返回值为表达式1的值
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

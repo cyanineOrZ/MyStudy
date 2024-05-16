@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 注意， 构造函数和类里面的对象构造器不一样
+    </script>
+    <script>
+        // 创建对象的三种方法
+
+        // 1、字面量创建（最快）
+        const obj = {
+            name: "字面量"
+        }
+
+        // 2、new Object()构造函数创建 （中等速度， 因为要通过原型链进行创建）
+        const obj1 = new Object()
+        obj1.name = "实例化对象创建"
+
+
+        // 3、构造函数实例化（最慢， 因为要通过原型链搜寻进行创建，）
+        function objConstroctor(name, age) {
+            this.name = name
+            this.age = age
+        }
+        const obj2 = new objConstroctor("woc", 12)
+        console.log(obj2);
+    </script>
+</body>
+</html>

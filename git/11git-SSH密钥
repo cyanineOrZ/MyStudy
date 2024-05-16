@@ -1,0 +1,20 @@
+SSH密钥是电脑唯一标识符，不会根据ip来变化
+
+GitHub链接本地电脑的SSH——需要在本地电脑中生成一个SSH密钥，密钥的开头一般为ssh-rsa， 结尾为你的邮箱
+
+git链接远程仓库
+
+远程仓库有两种链接方式，一种为SSH，一种为HTTPS（接近弃用）
+
+使用远程链接的SSH，必须要确保你的SSH密钥邮箱和你的Git全局设置邮箱一致，并且你的GitHub邮箱也一致，才可进行链接
+
+命令
+
+git remote add origin(远程仓库名，一般默认为origin) ssh(GitHub提供的SSH)
+
+git branch -M main(指定分支名称)
+
+将远程仓库与本地仓库关联起来
+git push -u origin main【git push -u origin main:main(远程仓库分支：本地仓库分支名)】
+
+woc

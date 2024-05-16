@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 在js中， 使用构造函数和原型来实现面向对象， js的面向对象的特性只有继承和封装， 构造函数实现封装， 原型实现继承
+        
+    </script>
+
+    <script>
+        // 原型 是啥？
+        // 每一个构造函数都拥有一个prototype属性， 这个属性会在构造函数被使用时创建一个新的对象， 并指向该新的对象， 这个新创建的对象我们称为原型对象
+
+        // 原型用来干嘛：
+
+        // 
+        // 原型对象可以挂载属性和方法，并且同一原型的对象，能共享挂载在原型的属性和方法，通过原型挂载方法， 让面向对象编程在创建对象时节省内存
+        // 类似于抽象类（但是抽象类是一个类，而原型对象是一个对象，并且是实例化的）
+    </script>
+
+    <script>
+        //例
+        function people(name, age) {
+            this.name = name
+            this.age = age
+            this.sing = function() {
+                console.log("woc");
+            }
+        }
+
+        const we = new people("woc", 13)
+        we.sing()
+
+        const you = new people("niema", 14)
+        you.sing()
+
+        const they = new people("shabi", 15)
+        they.sing()
+
+        // 上面三个对象都通过people构造函数进行创建，但是我们注意到,三个对象开的sing函数， 并不是同一个sing函数，这意味着
+        // 我们每次通过people构造函数进行创建对象时，都会开辟一个内存存放一个sing()函数， 但它们的效果确实一样的
+        // 所以这样造成了内存浪费
+        console.log(we.sing === you.sing);
+        console.warn("分割线")
+
+        //通过原型进行构造
+        function people1(name, age) {
+            this.name = name
+            this.age = age
+        }
+        people1.prototype.sing = function() {
+            console.log("WOC1");
+        }
+        console.log(people1.prototype);
+        const w = new people1("123", 123)
+        const y = new people1("456", 456)
+        const t = new people1("789", 789)
+
+        //此时，w， y， t 三个对象的sing方法都是属于同一个方法， 而他们也只是调用原型对象里面的方法
+        //这时的w， y， t 三个对象的sing属性指向的就是原型链中的名为sing的函数
+        console.log(w.sing === y.sing);
+    </script>
+
+    <script>
+        // 原型的this指向
+
+        
+    </script>
+</body>
+</html>

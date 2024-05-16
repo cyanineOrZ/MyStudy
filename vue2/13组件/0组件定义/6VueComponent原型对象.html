@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对于Vue， 开发者重写了VueComponent的原型对象的原型的对象的指向，使其指向了Vue实例的对象原型
+
+        // VueComponent.prototype.__proto__ === vm.__proto__ === Vue.prototype 
+
+        // 由于此内置关系，所以VueComponent实例对象可以使用Vue的对象原型上的所有代码
+    </script>
+</body>
+</html>

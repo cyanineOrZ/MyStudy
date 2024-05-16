@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    一、强制转换（不改变变量本属性）<br>
+    整形转换parseInt(String)<br>
+    如<br>
+    <script>
+        var age = '18';
+        console.log(parseInt(age));/*结果为18，将字符型强制转换为数字型，但不改变原变量的定义*/
+
+        var pai = 3.14
+        console.log(parseInt(pai));/*结果为3 parseInt是整数型，不会保留小数部分（不进行四舍五入）*/
+
+        var widther = '120px';
+        console.log(parseInt(widther));/*结果为120 parseInt不会识别单位*/
+
+        var heiht = 'rem120px';
+        console.log(parseInt(heiht));/*无法识别，parseInt识别是从变量的值的第一个开始，当首字为非法字符时（字母，特殊符号）无法识别，这时为NaN*/
+    </script>
+
+    浮点型转换parseFloat(String)<br>
+    如<br>
+    <script>
+        var age2 = '18';
+        console.log(parseFloat(age2));/*结果为18，字符型转化为数字型，并且不改变定义*/
+
+        var pai2 = 3.14;
+        console.log(parseFloat(pai2));/*结果为3.14，parseFloat是浮点型，将会保留小数部分*/
+
+        var widther2 = '120px';
+        console.log(parseFloat(widther2));/*结果为120，parseFloat会去除单位*/
+
+        var heigh2 = 'rem120px';
+        console.log(parseFloat(heigh2));/*结果为NaN，同parseInt*/
+    </script>
+
+    二、函数强制转换
+    通过Number()
+    如
+    <script>
+        var yourAge = '18';
+        console.log(Number(yourAge));/*将数据强制转换为数字型数据类型进行输出，但不改变其定义*/
+    </script>
+
+    三、JS隐形转换
+    通过 -（减号） *（乘号） /（除号） %（取余）
+    如
+    <script>
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

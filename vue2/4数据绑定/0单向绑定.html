@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <!-- 
+
+        通过实例，可以看到，单向数据绑定只能通过修改服务器内容来改变页面内容，
+
+        而页面无法被客户端修改
+
+     -->
+    <div id="root">
+        <input type="text" name="" id="" v-bind:value="test">
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#root",
+
+            data: {
+                test: "测试哦"
+            }
+        })
+    </script>
+</body>
+</html>

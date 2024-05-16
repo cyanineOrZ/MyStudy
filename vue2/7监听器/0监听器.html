@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+        <h1>{{Weather}}</h1>
+
+        <button id="button" @click="change($event)">
+            dianwoqiehuan            
+        </button>
+    </div>
+
+    <script>
+        // 监听器（侦听器）如其名，就是监听某些东西的变化或者变量值的变化
+        new Vue({
+            el: "#root",
+
+            data: {
+                changeW: true,
+            },
+
+            methods: {
+                change: function() {
+                    this.changeW = !this.changeW
+                }
+            },
+
+            computed: {
+                Weather: {
+                    get: function() {
+                        if(this.changeW === true) {
+                            return "炎热"
+                        }
+                        else {
+                            return "凉爽"
+                        }
+                    }
+                }
+            },
+
+            // watch——监听
+            watch: {
+
+                // 监听器只能监听拥有的值或者方法， 对于不存在的值或者方法，虽然不会报错，但是不会输出有用信息
+                changeW: {
+                    // immediate 
+                    // 用于立即初始化被监听者，当页面未发生改变时，由于没有变化，被监听者不一定会有反应，有时就需要immediate及进行立即初始化
+                    // 常用于父组件向子组件传递的信息的初始化
+                    
+                    //  deep
+                    // 深度监听，用于解决watch只能监听部分浅层数据的问题
+
+
+                    // handler, 线程, 这里是创建监听线程, 可以监听该变量的值的变化，传入两个参数，输出该变量的新值和旧值
+                    handler(newvalue, oldvalue) {
+                        console.log(newvalue, oldvalue);
+                    }
+                }
+            }
+
+            /**
+             * 简写形式： 
+             * 
+             * 1、首先要实例化Vue对象， 并且声明一个变量
+             * 
+             * 2、vm.$watch("key", {
+             *     options
+             * })
+            */
+        })
+    </script>
+
+    <script>
+        /**
+         * watch与computed的区别
+         * 
+        */
+
+    </script>
+</body>
+</html>

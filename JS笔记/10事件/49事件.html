@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    事件三要素:事件源、事件类型、事件处理程序<br>
+    1、事件源 <br>
+    事件被触发的对象<br>
+
+    2、事件类型<br>
+    如何触发，什么事件<br>
+    [鼠标事件， 键盘事件， 触摸事件， 拖拉事件， 进度事件， 表单事件， 文档事件， 焦点事件， scroll事件， resize事件]
+
+    3、事件处理程序<br>
+
+    <button id="btn"></button>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            alert('我超')
+            console.log('1');
+        }
+    
+    </script>
+
+    <button id="time"></button>
+    <div id="timeText"></div>
+    <script>
+        var time = document.getElementById('time')
+        var timeText = document.getElementById('timeText')
+        time.onclick = function () {
+            confirm('你再点？')
+        }
+    </script>
+
+    获取当前时间<br>
+    <button id="time2"></button>
+    <div id="time21"></div>
+    <script>
+        var time2 = document.getElementById('time2')
+        var time21 = document.getElementById('time21')
+
+        time2.onclick = function() {
+            time21.innerText = getDate()
+        }
+
+        function getDate() {
+        var date =  new Date;
+        var year =  date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDay();
+        var hours = date.getHours();
+        var minute = date.getMinutes();
+        
+
+        var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        var now = '现在是' + year + '年' + month + '月' + day + '日' + arr[day] + hours + '时' + minute + '分';
+        
+        return now
+    }
+    </script>
+    <p id="time31"></p>
+    <script>
+        function getDate() {
+        var date =  new Date;
+        var year =  date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDay();
+        var hours = date.getHours();
+        var minute = date.getMinutes();
+        
+
+        var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        var now = '现在是' + year + '年' + month + '月' + day + '日' + arr[day] + hours + '时' + minute + '分';
+        
+        return now
+        }
+        
+        var p = document.getElementById('time31')
+    
+        p.innerText = getDate()
+    </script>
+</body>
+</html>

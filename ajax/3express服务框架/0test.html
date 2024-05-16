@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            width: 100px;
+            height: 100px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" id="get">
+        Get点这里
+    </button>
+
+    <button class="button" id="post">
+        Post点这里
+    </button>
+    <div class="button" style="color: aqua;border: 1px solid black;" id="testdiv">
+         
+    </div>
+
+    <script>
+        const getbutton = document.querySelector('#get')
+        const postbutton = document.querySelector("#post")
+        const text = document.querySelector("#testdiv")
+        
+        getbutton.onclick = function() {
+            // 创建xml对象
+            const xhr = new XMLHttpRequest()
+            // 初始化对象 设置发送请求的类型，url 发送参数和发送体 此行为设置请求行
+            xhr.open('GET', "http://127.0.0.1:8000/test?a=200000&b=200&c=15")
+
+            // 设置请求头 (一般用于请求体内容类型的设置， 所以get不一定会发送请求头，post有可能会发送请求头)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-from-urlencoded')
+
+            // 设置请求体（因为为get，所以请求体一定为空）
+            xhr.send()
+
+            // 事件绑定（当xhr对象的状态发生改变时【自带状态——readystate】有【0（初始状态）、1（open方法调用完毕）、2（send方法调用完毕）、3（服务端返回了部分结果）、4（服务端返回了全部结果）】）
+            // 这个是当xhr的readystate状态发生该表示进行的操作
+            xhr.onreadystatechange = function() {
+                // 当服务器端返回全部请求时
+                if(xhr.readyState === 4) {
+
+                    // 当服务器端成功响应时（200为正常成功，>=200 <300为成功）
+                    if(xhr.status >= 200 && xhr.status < 300) {
+
+                        // 处理结果
+                        text.innerHTML = text.innerHTML + xhr.response
+                    }
+                }
+            }
+        }
+
+        postbutton.onclick = function() {
+            const xhr = new XMLHttpRequest()
+
+            xhr.open("POST", 'http://127.0.0.1:8000/test')
+
+            xhr.setRequestHeader('Content-Type', 'application/x-www-from-urlencoded')
+
+            xhr.send("a=100, b=300")
+
+            // 事件绑定
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState === 4) {
+
+                    if(xhr.status >=200 && xhr.status < 300) {
+                        
+
+                        text.innerHTML = text.innerHTML + xhr.response
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

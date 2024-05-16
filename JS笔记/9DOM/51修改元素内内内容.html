@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- innerText不识别html的标签
+
+    innerHtml可以识别html标签 这个是最推荐的 -->
+</head>
+<body>
+    <p>
+        我是内容<br>
+        我也是内容<br>
+    </p>
+    <script>
+        // 获取 innerText 和 innerHtml 中的元素
+        var p = document.querySelector('p')
+
+        // innerText 在获取内容时， 不会保留空格， 以及其中的标签
+        console.log(p.innerText);
+
+        // innerHtml 在获取元素时， 会保留原格式， 并保留其中的标签
+        console.log(p.innerHTML);
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+git init                            创建仓库
+ls -a                               查看当前目录下全部文件以及文件夹
+
+
+git status                          暂存区状态
+
+
+git add fileName
+git rm --cached fileName 
+
+
+git commit 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>{{test}}</div>
+        <button @click="ms">变化</button>
+    </div>
+</body>
+<script>
+    const {ref, reactive, watch} = Vue
+    const app = Vue.createApp({
+        setup(props) {
+            let test = ref(0)
+            const testObject = reactive({
+                type: "test",
+                value: "woc"
+            })
+
+            // /watch监视ref/
+            // test可以替换为一个数组，进行多个数据的同时监视
+            watch(test, (newValue, oldValue) => {
+                console.log("Ref内数据被更改");
+                console.log("newValue:" + newValue, "oldValue:" + oldValue);
+            }, {
+                immediate: true,
+                deep: false
+            })
+
+
+            // /watch监视reactive/
+            // watch在监视reactive生成或ref生成的代理对象时， oldValue是无法被正常获取的，也即无法正常使用oldValue
+            watch(testObject, (newValue, oldValue) => {
+                console.log("testObject内数据被更改");
+            }, {
+                // 在Vue3中，Proxy是可以直接监视其属性的变化，但是无法监视更深层次的属性
+                deep: false
+            })
+
+
+            let ms = function() {
+                test.value = test.value + 1
+            }
+
+            return {
+                test,
+                ms
+            }
+        }
+    }).mount("#app")
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        何为BFC？
+        BFC 全称 Block Formattiong context， 中文名块级格式上下文
+        
+        BFC它决定了元素如何对其内容进行定位，以及与其它元素的关系和相互作用，
+        当涉及到可视化布局时，BFC提供了一个环境，HTML在这个环境中按照一定的规则进行布局。
+        
+        人话就是：
+        BFC就是一个完全独立的空间，让空间里面的子元素不会影响到外面的布局
+        每一个盒子模型都可以看作BFC， 当因为盒子模型的子元素因为：脱标，长度变化等原因发生部分属性变化
+        时，有可能会影响父元素的布局，进而影响整个页面的布局，这时，就需要触发BFC来帮助父容器形成一个
+        独立的布局空间。
+        
+        */
+
+        /* 
+        BFC是需要触发的
+        常见的触发的方式有
+        1、overflow:hidden(父)
+        2、display:inline-block(父)
+        3、position:absolute(父)
+        4、position:fiexd(父)
+        5、display:table-cell(父)
+        6、display:flex(父)
+        */
+
+        /* 
+        BFC的作用
+        1、清除浮动脱流带来的影响
+
+        2、清除margin塌陷
+
+        3、解决两栏布局互挤
+        */
+
+
+        /* 
+        BFC = OFDP 即 overflow， float， display， position
+        */
+    </style>
+</head>
+<body>
+</body>
+</html>

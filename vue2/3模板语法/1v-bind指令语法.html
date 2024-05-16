@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+
+        <!-- v-bind:（绑定）【可以简写成为:】 -->
+        <!-- 
+
+            当添加了v-bind: 属性里面的字符串就会变为JavaScript表达式去执行，并且将执行结果返回给绑定的属性
+
+            v-bind: 是一个单向数据绑定的指令语法，Vue可以通过解析使其展示相对应的属性，但是用户无法通过页面修改v-bind：绑定的值
+
+            简单来叔就是
+
+            v-bind可以读取data里面的数据，并呈现在页面，但是无法通过在页面中修改v-bind绑定的data的值
+
+         -->
+        <a v-bind:href="school.url">dianzheli</a>
+
+        <h1>:name</h1>
+
+    </div>
+
+    <script>
+        /**
+         * 指令语法：用于将值插入属性的语法——指令语法包括很多，v-bind只是其中之一
+         * 
+         * v-bind:可以解析标签，不仅包括标签体，也包括标签属性，更包括标签本身
+         * 
+         * 指令语法可以完成绝大部分的内容，能完成全部插值语法的内容
+        */
+        new Vue({
+            el: "#root",
+
+            data: {
+                name: "woc",
+                
+                school: {
+                    name: "dingzhong",
+                    url: "http://127.0.0.1:5500",
+                }
+            }
+        })
+    </script>
+</body>
+</html>

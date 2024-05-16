@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        /**
+         * 每个组件都会占有一个或一个以上的标签，也就是元素，如上面常用的button， 但，每个组件之间，只能拥有一个根元素
+         * 
+         * template: '<button>{{ti}}</button>
+         *            <h3></h3>'
+         * 
+         * 这种写法是不被支持的
+        */
+    </script>
+
+    <div id="root">
+        <div-test v-for="obj in objs" :key="obj.id" :obj="obj"></div-test>
+    </div>
+
+</body>
+<script>
+    // 通过组件接收多个信息，并将其显示在页面上
+    Vue.component("div-test", {
+        data() {
+            return {
+
+            }
+        },
+
+        props: ["obj"],
+
+        template: "<div> <h1>{{obj.title}}</h1> <h2>{{obj.content}}</h2> </div>"
+    })
+
+    new Vue({
+        el: "#root",
+        
+        data() {
+            return {
+                objs: [
+                    {id: 1, title: 4, content: 5,},
+                    {id: 2, title: 3, content: 6,},
+                    {id: 3, title: 2, content: 7,},
+                    {id: 4, title: 1, content: 8,},
+                ]
+            }
+        },
+    })
+</script>
+</html>

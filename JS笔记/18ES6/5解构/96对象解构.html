@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象解构 将对象的成员变量和成员方法进行提取, 并赋值给其他变量
+
+        const obg = {
+            name: 'diao',
+            age: 2,
+            sex: 'woc',
+            getG: () => {
+                console.log("Fuck world");
+            }
+        }
+
+        const {name, age} = obg
+        console.log(name, age);
+        // 这里相当于把 对象的值赋值给了name, age这两个变量， 等价于 const name = obg.name, const age = obg.age
+
+        // 这里注意， 需要被赋值的变量 的名称 等于 对象成员变量 的名称
+
+        // 如何在使用对象解构时, 对变量名进行更名操作 const {oldName: newName} = Object
+        const {name: wocO, age: sex, sex: age1} = obg
+        console.log(wocO, sex, age1);
+        // 此时,被重新赋值的变量的变量名便成为 wocO, sex, age1
+    </script>
+
+    <script>
+        // 1、对数组对象列的解构()
+        const woc = [{
+            name: "diaoni",
+            age: "caoni"
+        }]
+        const [{name: yashi, age: diaohei}] = woc
+        console.log(yashi, diaohei);
+
+
+        // 2、数组对象列的解构
+        const arr = [{name: "sb"}, {name: "stupid"}, {name: "woc"}, {name: "fuck"}]
+        for(let i = 0; i < arr.length; i++) {
+            const {name: you} = arr[i]
+            console.log(you);
+        }
+    </script>
+
+    <script>
+        // 多级对象解构
+        const obj = {
+            fname: 'sha',
+            obb: {
+                w: 'w',
+                o: "o",
+                c: 'c'
+            },
+            fage: "a"
+        }
+
+        const {fname, obb: {w, o, c}, fage} = obj
+        console.log(w);
+    </script>
+
+    <script>
+        // 对于对象解构而言， 只要保持与被解构对象的格式一致， 这个就是对象解构的最好记的格式。
+    </script>
+</body>
+</html>

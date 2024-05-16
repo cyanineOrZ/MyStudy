@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise链式调用，可以实现promise的串联，并且能有效解决回调地狱
+
+        // 原理：promise.then()返回的是一个promise对象，也带有then方法
+    </script>
+
+    <script>
+        // 如何中断
+
+        // 有且只有一种方式，只有返回一个pending状态的promise对象，才能中断串联（因为只有改变了pending状态的promise对象，才能执行then和回调函数）
+
+        const promisetest = new Promise((resolve, reject) => {
+            resolve()
+        })
+
+        promisetest.then((value) => {
+
+        }).then((value) => {
+
+        }).then((value) => {
+
+            console.log("此处中断");
+            // 返回一个pending状态的promise，让串联中断
+            return new Promise(() => {})
+
+        }).then((value) => {
+
+        }).then((value) => {
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Vue2时，就是配置式API，类似data，methods，computed等同级API
+
+Vue3时，就是组合式API，使用setup实现
+
+组合式的优势
+1、

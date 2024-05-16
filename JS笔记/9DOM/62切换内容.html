@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .li {
+            display: block;
+            line-height: 68px;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 通过事件委托进行事件绑定 -->
+    <div style="display: flex; flex-direction: column; justify-content: center; width: 500px; height: 500px;">
+        <div style="display: flex; flex-direction: row; width: 100%; height: 20%; justify-content: space-around;">
+            <ul style="display: flex; flex-direction: row; justify-content: center; list-style-type: none;" id="ul">
+                <li style="color: red;">红</li>
+                <li style="color: orange;">橙</li>
+                <li style="color: yellow;">黄</li>
+                <li style="color: green;">绿</li>
+                <li style="color: purple;">紫</li>
+            </ul>
+        </div>
+        <div style="flex-grow: 1; background-color: antiquewhite;" id="color">
+
+        </div>
+    </div>
+    <script>
+        const ul = document.querySelector('#ul')
+        const color = document.querySelector("#color")
+        for(let i of ul.querySelectorAll("li")) {
+            i.className = "li"
+        }
+        ul.addEventListener("click", function(e) {
+            color.style.backgroundColor = e.target.style.color
+        }, false)
+    </script>
+</body>
+</html>

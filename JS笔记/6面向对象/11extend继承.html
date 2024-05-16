@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 同java的继承 JavaScript的继承一样会继承父类的成员变量和成员方法
+
+        // 继承是面向对象开发的三大特性之一， 另外两个是多态和封装
+
+        // js的面向对象， 只有继承和封装， 没有多态
+    </script>
+
+    <script>
+        // super(value) 方法， super方法是用来调用超类（父类或者父类的父类）的构造函数的， 并将得到的参数传入超类的构造函数中
+
+        // 并且如果子类定义了构造函数 constructor 则必须先进行 super() 方法的使用才能使用this。
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+            speak() {
+                console.log("wodiaoni");
+            }
+        }
+
+        class dog extends Animal {
+            constructor(name) {
+                super(name)
+            }
+        }
+        
+        const dog1 = new dog('woc')
+        console.log(dog1.name);
+
+        // super() 方法不仅仅用来调用超类的构造函数，也可以直接调用超类的成员变量和成员方法
+
+        class cat extends Animal {
+            constructor(name) {
+                super(name)
+            }
+            speak() {
+                super.speak();
+                console.log("你怎么在");
+            }
+        }
+
+        const cat1 = new cat("woshimao")
+        console.log(cat1.speak());
+    </script>
+
+    <script>
+        // 类是不能继承常规对象（不通过构造函数构造出来的对象）的，如果类要继承一个常规的对象， 就需要使用原型链的方法。
+
+        // 类的继承虽然很有用，但是实际工作不怎么用
+    </script>
+</body>
+</html>

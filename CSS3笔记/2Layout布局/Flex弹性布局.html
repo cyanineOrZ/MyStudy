@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 
+        Flex布局又称为弹性布局，是最新的布局方式，非常简单，将float浮动布局淘汰
+
+        Flex布局遵循 容器——元素 的布局方式， 对某一元素采用Flex布局，则必定要对其父容器
+        设置Flex布局。
+
+        基本属性——父容器
+        1、flex-direction ： row | row-reverse | column | column-reverse
+        该属性为设定父容器的 主轴 和 侧轴的走向
+        row， row-reverse 都是主轴为 x , 侧轴 为 y， row为从左到右， row-reverse为从右到左
+        column， column-reverse 都是主轴为 y， 侧轴为 x ， column为从上到下， column-reverse为自下而上
+
+
+        2、justify-content： flex-start | flex-end | center | space-around | space-between 
+        该属性设置元素在容器内的排列方式
+        flex-start 为沿主轴方向排序
+        flex-end 为逆主轴方向排序
+        center 为向主轴中间贴近后居中排序
+        space-around 为平均分配剩余的空间（元素不会得到空间， 只是等间隙地分配空间）
+        space-between 两边的元素在贴紧容器的两边后， 中间的空间由剩余的元素平均分配
+        
+
+        3、flex-warp：wrap | nowarp
+        该属性为设置在容器的宽度容不下更多的元素时，多余的元素是否换行
+        wrap 为换行
+        no-warp 为不换行， 并且多余的元素会以修改该容器内对应行的元素的宽度的方式，被强行地纳入容器内，
+        简而言之就是容器内的元素会因为容器宽度不够而被改变宽度
+
+
+        4、align-items：flex-start | flex-end | center | stretch
+        该属性设置了容器内元素在侧轴的排序方法（对于主轴为单行元素的容器的flex布局生效）
+        flex-start 沿侧轴方向排序
+        flex-end 沿逆侧轴方向排序
+        center 向中间贴紧后居中
+        stretch 拉伸，让元素的沿侧轴方向的长度拉伸到同容器一样长，会使元素的宽度(有可能是高度)发生改变
+        ps stretch 拉伸与元素侧轴方向的长度设置互斥
+
+        
+        5、align-content：flex-start | flex-end | center | space-around | space-between | stretch
+        该属性设置了容器内元素在侧轴的排序方法(对于主轴内元素为多行的容器的flex布局生效)
+        flex-start 沿侧轴方向排序
+        flex-end 沿逆侧轴方向排序
+        center 向中间贴紧后居中
+        space-around 为平均分配剩余的空间（元素不会得到空间， 只是等间隙地分配空间）
+        space-between 两边的元素在贴紧容器的两边后， 中间的空间由剩余的元素平均分配
+        stretch 拉伸，让元素的沿侧轴方向的长度拉伸到同容器一样长，会使元素的宽度(有可能是高度)发生改变
+        
+        ps align-content 出现则必有 flex-warp ： warp 的出现
+
+        
+        6、flex-flow ： flex-direction & flex-warp
+        该属性为flex-direction 和 flex-warp 的混合写法
+
+
+        基本属性——子元素
+
+
+        */
+
+        
+    </style>
+</head>
+<body>
+    <script>
+        // 此处为父元素属性
+        
+        /*
+        1、主轴
+        flex-direction: 
+
+        2、侧轴
+        justify-content:
+
+        3、换行(超过父元素宽度是否换行)
+        flex-warp:
+
+        4、flow：flex-direction flex-warp（主轴和换行的缩写）
+
+        5、justify-content: 【没有拉伸】（主轴对齐方式）
+
+        6、align-item: 【存在拉伸，和基线对准】(侧轴对齐方式)
+
+        7、align-content：【存在拉伸，其余与align-item一样，但没有基线对准】 存在多个元素行【列】时的对其方式
+        */
+    </script>
+</body>
+</html>

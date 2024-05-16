@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        undefined 未被定义
+        用于标注未初始化的变量，也有其他用途
+
+        一、用于判断变量是否已被赋值
+        如
+        var x;
+        function test (x) {
+            if (x === undefined) {
+                return "yes";
+            }
+            else {
+                return "no";
+            }
+        }
+        console.log(test(x));
+        var x = 10;
+        console.log(test(x));
+        
+        输出结果为 yes， no
+
+        二、作为Boolean型变量时， 被当成false
+        如
+        var x;
+        if (!x) {
+            return "yes";
+        }
+        else {
+            return "no";
+        }
+        输出yes
+
+
+        三、作为NaN
+        当一个变量并未被赋值，但参与运算时， js将该变量转为NaN
+
+     -->
+
+
+     <!-- 
+        null 空值
+        一、空值为一个不存在的值，但在空值参与运算和比较时，将空值视为 0
+
+        如
+        var x = null;
+        function test (x) {
+            if (x == 0) {
+                return "yes";
+            }
+            else {
+                return "no";
+            }
+        }
+
+        二、作为Boolean型变量时， 被当成false
+        如
+        var x = null;
+        if (!x) {
+            return "yes";
+        }
+        else {
+            return "no";
+        }
+        输出yes
+
+      -->
+
+    <!-- 
+
+        undefined 和 null 的区别与相同点
+
+        一、区别
+        undefined 的定义是未定义， 用来表示已经声明的但未初始化的变量
+        null 的定义是空值， 通常用于变量的初始化
+
+        二、相同点
+        undefined 和 null 都是基础数据类型
+        undefined 和 null 参与 boolean 运算时， 都视为 false
+        使用typeof 判断某个变量时， 如果变量属于undefined， 则输出为undefined， 如果变量属于null 则输出为Object（历史遗留问题）
+        
+
+     -->
+    
+     <!-- 
+        ReferenceError 是引用错误， 当一个对象或者变量不存在时并被引用时，触发该错误
+
+      -->
+</head>
+
+<body>
+    <script>
+        var a;
+        console.log("The value of a is " + a); // a 的值是 undefined
+
+        console.log("The value of b is " + b); // b 的值是 undefined(因为预解析，var声明会被第一时间进行，所以实际顺序与a一致)
+        var b;
+
+
+        // console.log("The value of c is " + c); // 未捕获的引用错误：c 未被定义 ReferenceError引用错误
+
+        let x;
+        console.log("The value of x is " + x); // x 的值是 undefined
+
+        // console.log("The value of y is " + y); // 结果是ReferenceError， 未捕获的引用错误：y 未被定义(未被初始化的let 声明的变量， 直接引用会抛出ReferenceError错误)
+        let y;
+
+        var g;
+        function test (g) {
+            if (!g) {
+                return "yes";
+            }
+            else {
+                return "no";
+            }
+        }
+        console.log(test(g));
+
+        var k = null;
+        function test1 (k) {
+            if (!k) {
+                return "yes";
+            }
+            else {
+                return "no";
+            }
+        }
+        console.log(test1(k));
+    </script>
+</body>
+</html>

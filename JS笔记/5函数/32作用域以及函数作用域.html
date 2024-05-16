@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+
+
+
+    <!-- 作用域的两大考点 -->
+    <script>
+        // 全局变量的定义
+        const test = "fuck"
+        // 在JavaScript中，全局变量可以通过在函数作用域内部进行定义而污染全局
+        function t() {
+            test = "fuck you"
+            console.log(test);
+        }
+        t()
+        // t打印的结果为fuck you， 这就是函数作用域内全局变量的1全局污染， 所以尽量避免这种命名方式
+    </script>
+</body>
+</html>

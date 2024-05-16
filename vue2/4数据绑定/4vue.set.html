@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        {{name}} {{age}} {{sex}}
+        <button @click="increase($event)"></button>
+    </div>
+    <script>
+        // 由于Vue2使用的是Object.defineProperty()
+
+        // 无法监听data新增或者删除属性，而通过set可以解决该问题,通过vue.set添加的属性和值，会拥有响应式
+        // 但Vue.set只能给Vue._data里面的对象添加属性，而不能直接给Vue._data添加属性（即无法将vm和vm._data识别为target）
+
+        // vm.set(target, key, value)
+        const vm = new Vue({
+            el: "#root",
+
+            data: {
+                name: "woc",
+                age: 13
+            },
+            
+            methods: {
+                increase: function() {
+
+                }
+            },
+        })
+    </script>
+</body>
+</html>

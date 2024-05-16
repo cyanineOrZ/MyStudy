@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包概念： 一个函数对周围状态的引用捆绑在一起， 内层函数中访问到其外层函数的作用域【闭包就是函数嵌套时， 内部函数使用了外部函数的局部变量（或者说内部函数访问了外部函数的作用域）就产生了闭包】
+
+        // 简单理解就是， 闭包能让你可以在一个内层函数中访问到外层函数的作用域.
+
+        // 简单案例
+        localStorage.clear()
+        function a() {
+            let t1 = 0
+            let t2 = 1
+            function b() {
+                console.log(t1);
+            }
+            b()
+        }
+        // 这个嵌套函数就是闭包
+
+        // 闭包的作用
+        // 1、实现数据的私有化， 闭包的数据，由于在局部作用域中， 外部作用域只能通过闭包使用，而不能直接对其进行修改。
+    </script>
+
+    <script>
+        // 闭包要慎用， 因为闭包会造成内存泄漏
+    </script>
+
+    <script>
+        // 闭包使用场景
+        // 1、非本作用域的作用域要使用本作用域的局部变量
+        localStorage.clear()
+        function a() {
+            let t = 1000
+            return function b() {
+                return t
+            }
+        }
+        
+        // a() === 函数体b === function b() {}
+
+        const test = a()
+        console.log(test()); //输出1000
+
+
+
+        // 统计函数调用案例
+        function test1() {
+            console.log("Hello World");
+            let i = 0
+            function inner() {
+                i++
+                return i
+            }
+            return inner
+        }
+
+        // 在这里函数就会被调用一次，虽然不会被计数， 但是不知道怎么解决
+        const fun = test1()
+        
+        for(let i = 0; i < 10; i++) {
+            test1()
+            console.log(fun());
+            // 在这里，虽然外部函数test1() 对i进行了let i = 0;的初始化， 但是fun()并没有调用test1(), test1()的调用也无法影响
+        }
+    </script>
+
+    <script>
+        // 2、
+    </script>
+</body>
+</html>

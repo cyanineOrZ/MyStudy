@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            盒子模型能绘制三角形的原因是， 当盒子模型高宽都为0时， border边框的宽度是从盒子模型的中心点向外延伸的
+            就如同中间发散一样。
+
+            通过给border设定一定的宽度， 并且添加特定的颜色，就能形成一个三角形
+
+            同时，通过圆角边框，也可以绘制一个圆
+
+
+            border-radios： 50%；
+            绘制一个圆
+
+            还可以绘制一个直角梯形，根据边框长度也可以绘制不同角度的三角形
+        */
+    </style>
+
+    <style>
+        .triangle-top {
+            /* 一个高100px 底长200px 顶点在中心 底边在border-top的三角形 */
+            display: block;
+            position: relative;
+            width: 0;
+            height: 0;
+            border-top: 100px solid black;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+        }
+
+        .triangle-left {
+            /* 一个高100px 底边长200px 顶点在中心 底边在border-left的三角形 */
+            display: block;
+            position: relative;
+            width: 0;
+            height: 0;
+            border-top: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            border-left: 100px solid black;
+        }
+
+        .Right-triangle-top {
+            /* 一个高200px 底边长200px 直角点在左上角 直角边在border-left和border-top的直角三角形 */
+            display: block;
+            position: relative;
+            width: 0;
+            height: 0;
+            border-top: 100px solid black;
+            border-left: 100px solid black;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+        }
+
+        .Right-trapezoid-top {
+            /* 一个高100px 长边为200px 短边为100px 直角点在左上角的直角梯形 */
+            display: block;
+            position: relative;
+            width: 0;
+            height: 0;
+            border-top: 100px solid black;
+            border-left: 100px solid black;
+            border-right: 100px solid transparent;
+        }
+
+        .circle {
+            /* 一个半径为100px的圆 */
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            border-radius: 50%;    
+        }
+
+
+        .Semicircular-circle {
+            /* 一个半径为100px 角度为90度的扇形圆 */
+            display: block;
+            position: relative;
+            width: 0;
+            height: 0;
+            border: 100px solid transparent;
+            border-top: 100px solid black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="triangle-top"></div>
+    <div class="triangle-left"></div>
+    <div class="Right-triangle-top"></div>
+    <div class="Right-trapezoid-top"></div>
+    <div class="circle"></div>
+    <div class="Semicircular-circle"></div>
+</body>
+</html>

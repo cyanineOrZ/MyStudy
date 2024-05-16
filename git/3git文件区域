@@ -1,0 +1,17 @@
+git分为三个区域
+
+1、工作区 wordking dir
+也就是本地目录
+
+git add 
+
+
+2、暂存区 staging area
+保存即将提交到git仓库的修改内容，只保存了修改内容
+
+git commit 
+
+
+
+3、本地仓库（远程仓库）
+包含项目区域和原数据

@@ -1,0 +1,18 @@
+删除文件第一种方法
+
+命令行，将文件从工作区中删除（git bash能直接使用linux命令）
+rm FileName（linux命令）
+
+然后，将文件从暂存区中删除， 此时执行完毕
+git add FileName
+
+
+第二种方法
+git rm FileName
+
+
+
+
+无论哪种方法都记得提交
+\
+如果只想从版本库种进行删除， 只需要 git rm --cached FileName 即可

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 浏览器页面渲染过程（粗略）
+        // 
+    </script>
+
+
+
+    <script>
+        // 页面加载事件, 但不止只能用于浏览器窗口事件的加载， 也可以用于某些资源的加载（比如大图片），load事件主要用于浏览器全部元素(包括样式表，节点树，图片图标文字资源)加载完成后，再进行的事件
+
+        // load事件适用于window节点
+    </script>
+
+    <script>
+        // window 节点  window是DOM树上最大的的节点， 代表的是整个浏览器
+    </script>
+
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                alert(1)
+            }, 1000)
+        })
+    </script>
+
+
+    <script>
+        // 节点加载事件，适用于HTML文档中的节点被全部加载后， 直接可以进行事件的触发而无需等待全部资源的加载， 常用于视频封面或者其他图片跳转区域
+
+        // DoMContentLoaded事件适用于document节点
+    </script>
+
+    <script>
+        // document节点， 仅次于window节点的节点， 代表了浏览器的内容部分
+    </script>
+</body>
+</html>

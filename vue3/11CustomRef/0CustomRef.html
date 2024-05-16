@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-model="test">
+        <div>{{test}}</div>
+    </div>
+</body>
+<script>
+    const {ref, customRef} = Vue
+    const app = Vue.createApp({
+        setup(props) {
+            function myRef(value) {
+                // 自定义Ref函数域
+                // customRef(() => {})
+
+                // 根据响应式的原理，处理得到的数据，要想获取或修改，必须要经过get，set也就是数据劫持，才能对数据进行读取，修改
+                // 该回调函数有两个参数， track()追踪虚拟DOM的改变【将响应式数据绑定】   trigger()为重新解析，也即让Vue重新解析该虚拟DOM
+                return customRef((track, trigger) => {
+                    return {
+                        get: function() {
+                            console.log("自定义Ref的get被调用");
+                            // 追踪Value的变化，当变化时，也会变化返回
+                            track()
+                            return value
+                        },
+                        set: function(newValue) {
+                            console.log("自定义Ref的set被调用");
+                            value = newValue
+                            // 让Vue重新解析该虚拟DOM
+                            trigger()
+                        }
+                    }
+                })
+                // 当然可以添加一个自定义计时器，来实现防抖或者节流
+            }
+
+            let test = myRef("woc, 自定义Ref")
+
+            return {
+                test
+            }
+        }
+    }).mount("#app")
+</script>
+</html>

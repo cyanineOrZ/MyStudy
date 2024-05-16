@@ -1,0 +1,23 @@
+
+
+查看当前分支和分支列表
+git branch
+
+创建分支，branchName为分支名
+git branch branchName
+
+切换分支（有歧义的）
+git checkout branchName
+
+切换分支（只进行分支的切换）
+git switch branchName
+
+合并分支（将目标分支合并到当前分支中）
+ps：一定要在需要合并到的分支下进行该命令
+ps：一定要在需要合并到的分支下进行该命令
+ps：一定要在需要合并到的分支下进行该命令
+git merge branchName（此处分支名为目标分支）
+
+删除分支（）
+git branch -d branchName（只删除已经合并好的分支，未合并的分支无法删除）
+git branch -D branchName（强制删除分支，不管是否已经合并）

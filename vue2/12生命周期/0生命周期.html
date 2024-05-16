@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        /**
+         * Vue工作的原理：
+         * 
+         * 1、Vue找到了具有模板的标签或者元素节点Dom
+         * 
+         * 2、Vue开始解析该节点，并生成虚拟Dom
+         * 
+         * 3、Vue根据虚拟Dom生成真实Dom， 并将真实Dom挂载到页面（放在页面）
+         * 
+         * 当Vue挂载完毕后，调用mounted()
+        */
+    </script>
+
+    <div id="root">
+        <button>dianwo</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#root",
+
+        data() {
+            return {
+                
+            }
+        },
+
+        methods: {
+            
+        },
+
+        // 像mounted之类的函数，叫为生命周期函数（Vue实例的一次完整执行就是一个生命周期）
+        mounted() {
+            console.log("mounted执行");
+        },
+    })
+</script>
+
+<script>
+    /**
+     * 生命周期又名：生命周期回调函数， 也叫生命周期钩子（生命周期函数也叫钩子函数）
+     * 
+     * 是什么： 生命周期函数就是Vue示例在某些关键时候调用的特殊名称的函数
+     * 
+     * 生命周期函数的名字不可更改
+     * 
+     * 生命周期中的this指向是Vue示例也就是vm， 和组件的实例对象，也就是VueComponent的实例对象
+     * 
+    */
+</script>
+</html>

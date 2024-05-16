@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            transition: all 0.2s linear;
+        }
+        .Font {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+        }
+
+        .aContain {
+            float: left;
+        }
+
+        .a {
+            display: block;
+            padding: 20px;
+            line-height: 20px;
+        }
+
+        .ulco {
+            display: none;
+            list-style-type: none;
+            margin: 0 auto;
+        }
+        
+        .ulco li a{
+            display: block;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; width: 500px; margin: 0 auto;">
+        <div id="Contain" class="Font">
+            <div>
+                <!--  -->
+                <a href="" class="Font">test1</a>
+                <ul class="ulco">
+                    <li>
+                        <a href="">test1</a>
+                    </li>
+                    <li>
+                        <a href="">test1</a>
+                    </li>
+                    <li>
+                        <a href="">test1</a>
+                    </li>
+                </ul>
+            </div>
+            <!--  -->
+            <div>
+                <a href="" class="Font">test2</a>
+                <ul class="ulco">
+                    <li>
+                        <a href="">test2</a>
+                    </li>
+                    <li>
+                        <a href="">test2</a>
+                    </li>
+                    <li>
+                        <a href="">test2</a>
+                    </li>
+                </ul>
+            </div>
+            <!--  -->
+            <div>
+                <a href="" class="Font">test3</a>
+                <ul class="ulco">
+                    <li>
+                        <a href="">test3</a>
+                    </li>
+                    <li>
+                        <a href="">test3</a>
+                    </li>
+                    <li>
+                        <a href="">test3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        const Contain = document.querySelector("#Contain")
+        const divList = Contain.children
+        for(let i = 0; i < divList.length; i++) {
+            divList[i].className = 'aContain'
+            divList[i].children[0].className = 'a Font'
+            for(let k = 0; k < divList[i].children[1].children.length; k++) {
+                divList[i].children[1].children[k].children[0].className = 'a Font'
+            }
+        }
+
+        const ulList = document.querySelectorAll(".ulco")
+
+        for(let i = 0; i < ulList.length; i++) {
+            ulList[i].previousElementSibling.addEventListener("mouseover", function() {
+                this.style.background = "grey"
+                
+                ulList[i].style.display = "block"
+
+                ulList[i].addEventListener("mouseover", function() {
+                    ulList[i].style.display = "block"
+                })
+
+                for(let k = 0; k < ulList[i].children.length; k++) {
+                    ulList[i].children[k].children[0].addEventListener("mouseover", function() {
+                        this.style.background = "grey"
+                    })
+                }
+            })
+            
+
+            ulList[i].previousElementSibling.addEventListener("mouseout", function() {
+                
+                this.style.background = "none"
+                
+                ulList[i].style.display = "none"
+                
+                ulList[i].addEventListener("mouseout", function() {
+                    ulList[i].style.display = "none"
+                })
+
+                for(let k = 0; k < ulList[i].children.length; k++) {
+                    ulList[i].children[k].children[0].addEventListener("mouseout", function() {
+                        this.style.background = "none"
+                    })
+                }
+            })
+            
+        }
+
+    </script>
+</body>
+</html>

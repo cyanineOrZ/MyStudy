@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- setup是所有组合式API的舞台，也就是容器（函数容器）， 组合式API都需要依赖setup -->
+
+    <!-- 组件中使用的data，methods，computed，watch，生命周期等都需要使用setup -->
+    <div id="app">
+        <div>{{name}}</div>
+        <button @click="say">woc</button>
+    </div>
+
+    <!-- 
+        setup由于是一个函数容器，也就是一个函数，就一定会有返回值， 返回值的类型一般有两种
+     -->    
+    
+    
+
+    <!-- 
+       setup 最为一个函数，不可用于async 因为async会将函数返回值使用promise包裹
+     -->
+</body>
+<script>
+    const app = Vue.createApp({
+        setup(props) {
+            // 原Vue2里面的data
+            let name = "w"
+
+            
+            // 原Vue2里的methods
+            function say() {
+                alert("woc")
+            }
+
+
+            return {
+                name,
+                say
+            }
+        }
+    }).mount("#app")
+</script>
+</html>

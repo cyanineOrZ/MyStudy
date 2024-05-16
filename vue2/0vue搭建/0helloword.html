@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <!-- 插值语法{{}} -->
+
+    <!-- 容器内的代码，被称为vue模板 -->
+    <div id="root">
+        <h1>hello world. {{name}}</h1>
+    </div>
+
+    <script>
+        const txt = document.querySelector("#root")
+        console.log(txt.childNodes[1].innerText);
+        // 关闭开发环境提示
+        Vue.config.productionTip = false
+
+
+        // 创建vue实例
+        new Vue({
+            // el 为指定当前vue实例为哪个容器服务，数值为一般为css选择器,
+            // 且一个vue实例只能绑定一个容器，只能一一对应
+            el: "#root",
+
+            // data保存数据，并且数据提供给el所指定的容器使用
+            data: {
+                name:"hqb",
+            }
+        })
+        console.log(txt.childNodes[1].innerText);
+    </script>    
+</body>
+</html>

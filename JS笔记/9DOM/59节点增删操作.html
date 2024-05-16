@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test" style="display: flex; height: 500px; width: 500px; flex-direction: row; justify-content: center; align-items: center;">
+
+    </div>
+    <!-- 节点能进行增删改查 -->
+    <script>
+
+        const test = document.querySelector("#test")
+        // 添加节点
+
+        // 添加节点一共有两步
+
+        // 1、创建一个新的节点
+        const div = document.createElement('div')
+        div.style.width = 200 + "px"
+        div.style.height = 200 + "px"
+        div.style.background = 'red'
+        // 2、放置新节点
+
+        // 2.1、追加新节点（在原先节点的身后添加） appenChild(Node)
+        test.appendChild(div)
+
+        // 2.2、插入新节点（在父元素中插入一个新的节点） insertBefore(Node, perviousNode)
+        test.insertBefore(div, test)
+    </script>
+
+    <script>
+        // 克隆节点
+
+        // Node.cloneNode（true|false）
+        // true表示将节点的全部内容都进行克隆， 包括该节点的全部子节点
+        // false只克隆该节点本身， 不对子节点进行操作
+
+    </script>
+
+
+    <script>
+        // 删除节点
+
+        // 在JavaScript中， 只有亲父元素才能进行亲子元素的删除操作， 不然后又权限报错
+
+        // 删除节点与display：none， visiabliity：none的隐藏节点的隐藏操作是不一样的
+    </script>
+</body>
+</html>

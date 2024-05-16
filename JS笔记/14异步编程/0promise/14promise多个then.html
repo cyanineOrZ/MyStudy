@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 如果一个promise对象绑定多个then方法，那么会执行哪一个？都会执行
+
+        // 当promise对象的状态发生改变后，promise所绑定的then方法都按同步顺序执行
+
+        // 示例
+
+        const promisetest = new Promise((resovle, reject) => {
+            resovle(100)
+        })
+
+        promisetest.then((value) => {
+            console.log(value);
+        })
+
+        promisetest.then((value) => {
+            console.log(value * 2);
+        })
+
+        // 控制台输出100， 200
+    </script>
+</body>
+</html>

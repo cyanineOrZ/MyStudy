@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="test" data-id="0.0" index="0.00.0">
+        <!-- 用来干什么：用来保存和使用数据    -->
+
+
+        <!-- 该div里面的data-id就是自定义属性， 自定义属性为 data-id 值为 “0.0” -->
+    </div>
+
+    <script>
+        // 每个元素都有两种属性
+        // 1、原生属性（标准属性）：即元素自带的标签属性，比如像div的class， id等
+
+        // 2、自定义属性：非元素自带的属性
+
+        // 自定义属性的特点
+        // 1、标签上以data-开头
+        // 2、在DOM对象上一律以dataset对象方式获取该属性对象
+        // 例
+        const testdom = document.getElementById('test')
+        // 输出自定义属性
+        console.log(testdom.dataset);
+        // 该输出对象的数据类型为对象
+        console.log(testdom.dataset.id);
+
+
+        // 获取自定义属性值
+        // setAttrubute 和 getAttrubute 已经弃用， 但只需要知道其是用来进行自定义属性的设置和获取的就行
+        // 使用 object.dataset.dataName
+    </script>
+</body>
+</html>

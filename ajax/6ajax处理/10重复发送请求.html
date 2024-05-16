@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 重复发送请求，会对服务器造成大量的负担 -->
+</head>
+<body>
+    <button id="button">
+        dianjifasong
+    </button>
+
+    <script>
+        const button = document.querySelector("#button")
+
+        let sending = false;
+
+        let xhr = null
+
+        button.onclick = function() {
+
+            if(sending) {
+                xhr.abort()
+            }
+
+            xhr = new XMLHttpRequest()
+
+            sending = true
+
+            xhr.open("POST", "http://127.0.0.1:8000/again?c=250")
+
+            xhr.setRequestHeader('Content-Type', 'application/x-www-from-urlencoded')
+
+            xhr.send()
+
+            if(xhr.readyState === 4) {
+                sending = false
+
+                if(xhr.status <= 200 && xhr > 300) {
+                    console.log("success");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

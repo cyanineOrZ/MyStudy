@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数据劫持也称为数据代理，是JavaScript用来对对象内的数据进行一部分的规范而用的
+
+        // 何为数据代理：通过一个对象，代理对另一个对象中的属性值的操作，就叫做数据代理
+        // 简单点说就是，用一个对象，去操作另一个对象的属性
+
+        // 最简单数据代理
+        let obj = {
+            x: 100
+        }
+
+        const obj2 = {
+        }
+
+        Object.defineProperty(obj2, "test", {
+            get: function() {
+                return obj.x
+            },
+
+            set: function(value) {
+                obj.x = value
+            }
+        })
+    </script>
+</body>
+</html>

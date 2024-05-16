@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+
+    <script>
+        /**
+         * 键盘事件
+         * 
+         * keyup  按键按下并弹起后触发事件
+         * 
+         * keydown  按键按下即触发
+        */
+    </script>
+
+    <script>
+        /**
+         * enter  回车检验，只有按下回车键才能出发事件(key === Enter, keyCode === 13)
+         * 
+         * delete 删除检验，只有按下delete才会触发事件(delete, 46)
+         * 
+         * esc    回退检验，只有按下backspace才会触发事件(esc, 8)
+         * 
+         * tab    换行检验，只有按下换行Tab才会触发事件()
+         * 
+         * space  空格检验，只有按下空格才会触发事件
+         * 
+         * up，left，down，right  方向检验，只有按下对应的方向键，才会触发事件
+        */
+    </script>
+
+    <script>
+        /**
+         * 特殊按键（系统修饰键）
+         * 
+         * 配合keyup——按下系统修饰键，再按下其他按键，并回收其他按键，才能触发该事件
+         * 
+         * 配合keydown——按下系统修饰键，事件即可触发
+         * 
+         * ctrl  
+         * 
+         * alt
+         * 
+         * window
+         * 
+         * shift
+         * 
+         * 如何搭配其他键一起用  @keyup.ctrl.y (即只有当ctrl和y同时按下并放起才能触发事件)
+        */
+    </script>
+
+    <div id="root">
+        <input type="text" name="" id="" placeholder="键盘up事件" @keyup="test">
+
+        <input type="text" name="" id="" placeholder="键盘down事件" @keydown="test">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: function() {
+                return {
+
+                }
+            },
+
+            methods: {
+                test: function(event) {
+
+                    // 按键编码，通过按键编码或者按键名字，来对特殊的或者其他的按键添加事件
+
+                    // 但keyCode准备要被弃用了，统一使用key
+                    console.log(event.keyCode);
+
+                    // 按键名称
+                    console.log(event.key);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

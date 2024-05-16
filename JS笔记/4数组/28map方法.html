@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // map() 这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成, 其称为映射, 
+
+        // 例
+        localStorage.clear()
+        const arr = ['t', 'T', 's']
+        const newArr = arr.map(function(arr) {
+            return arr + 'wc'
+        })
+        console.log(newArr);
+
+        // 常用map() 格式
+
+        // Array.map((Array, index) => {
+                // 函数体
+        // })
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+git 【为了区分和linux的区别，都以git开头】
+
+--global 全局配置项， 将对全部git命令生效
+
+--system 系统全局配置， 将对系统全部用户的全部git命令生效
+
+git config --global user.name "name"        (全局配置用户名)
+git config --global user.email "youremail"  (全局配置用户邮箱)
+
+
+git config --global credential.helper store (记住配置)
+
+
+git config --global --list                  (查看全局配置信息)

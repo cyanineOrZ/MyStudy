@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        /**
+         * VueComponent是一个构造函数，
+         * 
+         * 1、组件本身是一个名为VueComponent的构造函数，在未被使用时，在定义组件时，Vue.extend会调用VueComponent
+         * 对于不同的组件而言，其VueComponent都是不一样的，因为是Vue.extend新构造的【通过构造函数来构造构造函数】
+         * Vue.extend返回的就是一个VueComponent构造函数对象，也就是组件
+         * 
+         * 2、当创建组件对象时【也就是调用组件时，Vue会解析组件，并通过组件的实为VueComponent的狗制造函数来创建实例】
+         * 
+         * 
+         * 3、每次调用的Vue.extend，返回的VueComponent都是一个新的VueComponent，虽然大致相同
+         * 
+         * 
+         * 4this的指向，与普通的构造函数的指向一样，没有new，指向构造函数，有new，指向实例
+         * 
+         * 
+         * 5、VueComponent虽然跟vm相差无几，但不一样，唯一的例外就是VueComponent没有el
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tableDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 200px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="tableDiv">
+        <table style="border-collapse: collapse;">
+            <!-- 上面的table样式中的 border-collapse：collapse 是用来消除th之间和tr之间的间隙 -->
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" id="chall"></th>
+                    <th>又一行</th>
+                    <th>再一行</th>
+                </tr>
+            </thead>
+            <tbody class="tbody" id="ch">
+                <tr>
+                    <th><input type="checkbox" name=""></th>
+                    <th>
+                        az
+                    </th>
+                    <th>
+                        az1
+                    </th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" name=""></th>
+                    <th>
+                        az
+                    </th>
+                    <th>
+                        az1
+                    </th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" name=""></th>
+                    <th>
+                        az
+                    </th>
+                    <th>
+                        az1
+                    </th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" name=""></th>
+                    <th>
+                        az
+                    </th>
+                    <th>
+                        az1
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let chall = document.getElementById("chall")
+        let chList = document.getElementById("ch").getElementsByTagName("input")
+
+        console.log(chList);
+        // 
+
+        // 点击全选和取消全选
+        chall.addEventListener("click", function() {
+            for(let i = 0; i < chList.length; i++) {
+                chList[i].checked = this.checked
+                console.log(chall.checked);
+            }
+        })
+
+        // 当所有选项都被选择时， 全选也会被选择， 当有一个不被选择时， 全选不选上
+        for(let i = 0; i < chList.length; i++) {
+            let status = true
+            chList[i].addEventListener("click", function() {
+                for(let i = 0; i < chList.length; i++) {
+                    if(!chList[i].checked) {
+                        status = false
+                        break
+                    }
+                }
+                chall.checked = status
+            })
+        }
+
+    </script>
+</body>
+</html>

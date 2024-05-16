@@ -1,0 +1,19 @@
+git status 仓库状态
+
+git add fileName(包括后缀)               将文件提交到暂存区  
+git rm --cached fileName                将文件从暂存区提取出来
+
+
+
+git commit -m "提交信息"                         将文件从暂存区提交
+
+不输入-m 将会进入到vim模式
+在vim中
+点击 i 键进入编辑状态
+点击ese 退出编辑状态
+输入 :wq 进行保存 回车即可退出
+
+
+批量添加
+git add *.txt                   将全部以.txt结尾的文件添加至暂存区
+git add FolderPath              将指定目录下的文件添加至暂存区（.为当前目录）

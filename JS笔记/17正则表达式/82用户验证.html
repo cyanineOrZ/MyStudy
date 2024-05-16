@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; width: 500px; height: 50px;">
+        <input type="text" name="" id="input">
+        <div id="right" style="display: none; width: 200px; height: 50px; background-color: green;">验证通过</div>
+        <div id="false" style="display: none; width: 200px; height: 50px; background-color: red;">验证失败</div>
+    </div>
+
+    <script>
+        const inputText = document.querySelector("#input")
+        const right = document.querySelector("#right")
+        const none = document.querySelector("#false")
+
+        // 定义正则表达式 要以任一数字字母或短横线下划线为开头，并且任意数字字符或短横线下划线组成的字符串长度要大于等于5或者小于等于10， 并且要以非换行符的特殊字符为结尾
+        const pattern = /^[a-zA-Z0-9-_]{5,10}.$/
+        inputText.addEventListener("blur", function() {
+            if(pattern.test(this.value)) {
+                right.style.display = "block"
+                none.style.display = 'none'
+            }
+            else {
+                none.style.display = "block"
+                right.style.display = 'none'
+            }
+        })
+    </script>
+</body>
+</html>

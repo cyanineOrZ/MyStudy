@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        变量分为全局变量和局部变量
+
+        全局变量即为在函数以外非函数的代码块中进行声明的变量
+
+        局部变量为在函数中声明的变量
+
+        注意使用 let， const进行声明的变量， let 和const 声明的变量只在let进行声明的代码块有用，
+        
+     -->
+
+    <!-- 
+
+        在ES6前， 只有全局作用域和局部作用域， 而ES6新增了块级作用域
+
+        全局作用域
+
+        局部作用域：也即函数作用域， 指函数内的代码
+
+        块级作用域：代码块作用域， 即使用 {} 包裹的代码块就属于块级作用域 ，为let const 变量声明服务， 当一个变量在块级作用域中 使用let和 const声明后， 其在该块级作用域以外的作用域不可使用
+
+     -->
+
+
+
+     <!-- 
+
+        常见的几种情况
+
+        1、var a = 0
+        普通的变量声明， 通过观察其所在的代码块判断其是全局变量还是局部变量
+
+        2、 a = 0
+        无声明变量， 一定为全局变量
+        
+        3、let a = 0， const a = 0
+        let const 声明的变量 通过观察其所在的代码块判断其是全局变量还是局部变量
+
+      -->
+</head>
+<body>
+    <script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .con {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 400px;
+            padding: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .title {
+            height: 40px;
+            margin-right: auto;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .del {
+            background-color: red;
+            width: 20px;
+            height: 20px;
+        }
+
+        .context {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div id="contain">
+        <button id="login">登录</button>
+        <button id="delete">删除</button>
+    </div>
+
+
+    <script>
+        const contain = document.querySelector("#contain")
+        const login = document.querySelector("#login")
+        const delete1 = document.querySelector("#delete")
+        
+        function Model(title, content) {
+            this.con = document.createElement('div')
+            this.titlediv = document.createElement('div')
+            this.contextdiv = document.createElement('div')
+            this.delete1 = document.createElement('div')
+
+            this.con.className = "con"
+            this.titlediv.className = "title"
+            this.delete1.className = "delete"
+            this.contextdiv.classList = "content"
+
+            this.titlediv.innerHTML = title
+            this.contextdiv.innerHTML = content
+
+            with(this.con) {
+                append(titlediv)
+                append(delete1)
+                append(content)
+            }
+        }
+        Model.prototype.open = function() {
+            document.body.append(this.con)
+        }
+
+        contain.addEventListener("click", (e) => {
+            const {tagName ,target} = e
+            if(tagName === "button") {
+                if(target.id === "login") {
+                    new Model()
+                }
+                else if(target.id === "delete"){
+
+                }
+            } 
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+git log 可以查看提交记录， 
+
+每个提交记录都拥有
+一个唯一的提交 CommitID
+提交者name
+提交时间Date +UTC
+提交msg
+
+（一页放不下，回车显示下一条记录，按q退出）
+
+git log --oneline 简洁提交记录
+
+只拥有一个 CommitID
+提交msg
+
+
+
+git reflog 查看git命令记录， 用于回溯git操作（与git回退操作一致）

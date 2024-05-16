@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Web API提供了三种储存方式 分别是 sessionStorage(会话存储)、 localStorage(本地存储)、cookier
+        // 三种存储方式也都属于BOM对象
+
+        // localStorage 是 HTML5 标准中新加入的技术，
+        // 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除；
+        // 注意，localStorage仅在用户客户端进行保存， 不参与和服务器的通讯。
+
+        // localStorage本地存储的特点
+
+        // 1、数据存储在用户浏览器里
+
+        // 2、设置，读取数据非常方便， 在使用某些方法时， 生命周期为用户或者开发者自定义，页面刷新也不会丢失数据
+
+        // 3、容量大， SessionStorage和localStorage都拥有大约5M的容量
+
+        // 4、多窗口共享（只要是同一浏览器，都会共享一个localStorage（大部分情况下））
+
+        // 5、使用键值对的方式进行存储
+
+        // 6、只能存储字符串（全部数据在存入本地存储后都会变为字符串），存入时需要转为json字符串， 读取时也要解析。
+    </script>
+
+    <script>
+        // localStorage本地存储常用方法
+
+        // setItem(key, value) 添加存储数据
+
+        // getItem(key) 获取储存数据(只获取值)
+
+        // removeItem(key) 移除该键的值和键
+
+        // clear() 清除所有数据
+
+        for(let i = 0; i < 10; i++) {
+            localStorage.setItem(i, i)
+        }
+        for(let k = 0; k < 10; k++) {
+            console.log(window.localStorage.getItem(k));
+        }
+
+
+        // 本地存储无法直接存储对象， 应该先将复杂数据类型转换为json字符串
+        const obj = {
+            name: "woc",
+            age: 22,
+            woc: "wokao"
+        }
+        // JSON.stringify() 会将复杂数据类型转换为json字符串
+        console.log(JSON.stringify(obj));
+        localStorage.setItem("obj", JSON.stringify(obj))
+        // JSON.parse(), 会将JSON字符串转会为JavaScript对象
+        console.log(JSON.parse(localStorage.getItem("obj")));
+    </script>
+
+    <script>
+        // sessionStorage因为互联网发展， 已经逐渐弃用； sessionStorage仅在当前会话下有效，生命周期为关闭页面或浏览器；
+
+    </script>
+
+    <script>
+        // sessionStorage会话存储常用方法
+        
+        // setItem(key, value) 存储键值对
+        
+        // getItem(key) 获取数据
+        
+        // removeItem(key) 移除数据
+        
+        // clear() 清空数据
+    </script>
+
+    <script>
+        // cookie 是一些数据, 存储于你电脑上的文本文件中，用于存储 web 页面的用户信息
+        // cookie 数据是以键值对的形式存在的，每个键值对都有过期时间。如果不设置时间，浏览器关闭，cookie就会消失，当然用户也可以手动清除cookie
+        // cookie每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题
+        // cookie内存大小受限，一般每个域名下是4K左右，每个域名大概能存储50个键值对
+
+
+    </script>
+
+    <script>
+        // cookie 和sessionStorage、localStorage的不同
+
+        // 1、传递方式不同
+        // cookie始终在同源的http请求中携带（无论是否需要cookie），即cookie在浏览器和服务器直接按来回传递
+        // sessionStroage和localStroage只在本地存储，不会自动把数据发送给服务器，仅在本地保存
+
+        // 2、数据大小不同
+        // cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。
+        // 存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。
+        // sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。
+
+        // 3、生命周期不同
+        // sessionStorage仅在当前浏览器窗口关闭前有效
+        // localStorage在一般情况下始终有效， 窗口或浏览器关闭也会一直保存， 除非用户和开发者进行手动清除
+        // cookie只在设置的cookie的过期时间之前一直有效， 一般为窗口或者浏览器关闭前
+
+        // 4、作用域不同
+        // 
+    </script>
+</body>
+</html>

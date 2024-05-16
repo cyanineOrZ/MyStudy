@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        声明方式
+        一、var 
+        最常用的用于声明一个变量的方法
+
+        二、let
+        let声明只在拥有进行了let指令的代码块里生效
+        如
+        function functionName () {
+            let a = 10;
+            console.log(a);
+        }
+        console.log(a);
+
+        在控制台中输出的顺序欸 10 undefined
+
+        a = 10 旨在名为 functionName 的函数中生效
+
+        三、const
+        用于声明一个只读的常量， 在确定的常量的值后， 该常量的值不会被改变
+        与let 一样拥有在职能作用是在被名为的作用域
+
+        修改里面的值， 就会报错
+        但
+        1、对于简单数据类型， 只要进行再赋值操作， 就会报错
+        2、对于引用数据类型， 对引用数据类型内部数据进行修改不会报错， 但是对
+        引用数据类型的地址进行修改时， 会报错
+        （
+        使用内存机制， 只要不修改栈中间的值， const就不会报错
+        而引用数据类型在栈中的数值为 引用数据类型在堆里面的地址， 所以改变其内部的值
+        const不会报错
+        ）
+     -->
+
+    目前多用let 和 const 
+    常量使用const
+    变量使用let
+    如果不确定， 就先用 const
+
+    <!-- 
+        声明变量的方式有两种
+
+        一、通过三种声明方式进行声明
+        如
+        var x = 10;
+        let x = 20;
+        const x = 30;
+
+        二、直接进行变量赋值(相当于对该变量进行一次全局声明，但容易出错，不建议)
+        当直接赋值时，相当于省略了 const 的常量
+        如
+        x = 10;
+        不管在哪个代码块进行直接赋值，都会相当于进行全局赋值，即全部代码都可使用
+     -->
+
+
+     <!-- var let const 的区别 -->
+     <!-- 
+        1、let， const 是es6新增的变量声明， 是一种块级变量声明， 拥有块级作用域， 解决了变量泄露和计数器泄露的问题
+
+        2、let， const不存在变量提升， 即需要使用let const 声明的变量时， 需要先声明再使用， 而var声明的变量会进行变量提升
+        可以在使用前不进行声明。
+
+        3、let， const声明的变量在相同作用域中不可以进行重复声明， var声明的变量可以
+
+        4、let， const声明的变量在被声明前使用会存在暂时性死区的问题，从变量所在作用域被创建到变量被初始化的这一段空间被称为暂时性死区
+
+        5、var let 都可以改变指针的指向， 而const不可以
+
+    -->
+
+</head>
+<body>
+    <script>
+        console.log();
+        var a = 10
+        function test (a) {
+            let x = 20
+            b = 10
+            console.log(x);
+            console.log(b);
+        }
+        test(a)
+        console.log(a);
+        console.log(x);
+        console.log(b);
+    </script>
+</body>
+</html>

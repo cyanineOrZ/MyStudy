@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组解构是将数组单元值快速批量地赋值给一系列变量的简洁语法
+
+        const arr = [20, 30, 40]
+        const [woc, wori, fuck] = arr
+        console.log(woc, wori, fuck);
+
+        // 数组结构能快速交换两个变量的值， 但是会改变原始变量的值， 所以看情景使用
+        let a = 0
+        let b = 1
+        console.log(a, b);
+        ;[a, b] = [b, a]
+        console.log(a, b);
+
+
+        // 数组解构中， 有时会让系统误认为数组未被定义， 无法使用数组结构， 这个时候就需要人为添加分号;进行换行标识
+        const str = [1, 2]; //在这里需要加分号， 不然会报未定义错误
+        [1, 2, 3, 4].map((item) => {
+            console.log(item * 2); 
+        })
+
+    </script>
+</body>
+</html>

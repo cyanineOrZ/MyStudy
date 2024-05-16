@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    在程序中，一组被重复执行的语句称为循环体，能否继续重复执行，取决于循环的终止条件
+    由循环体及循环的终止条件组成的语句，称为循环语句
+
+    JS中循环有三、一是for循环,二是while循环,三是do while 循环
+
+    for循环是开发中用得最多的
+    结构
+    for(初始化变量 ;条件表达式 ; 操作表达式){
+        循环体;
+    }
+
+    初始化变量用于作为计数器使用，条件表达式用于决定循环的执行与否，及终止条件
+    操作表达式及每次循环最后执行的代码，用于计数器更新。
+
+    <script>
+        for(var i = 0 ; i < 10 ; i++){
+            console.log('666');
+        }
+    </script>
+
+    for循环执行过程
+    1、对计数器变量进行初始化
+    2、对初始化后的变量进行条件判断,当变量满足条件时,执行循环体语句
+    3、执行完循环体语句后,进行操作表达式(计数器变量的更新)
+    4、对更新完的计数器变量进行条件判断,若更新后仍满足条件,则执行循环体语句,若不满足,则中止循环
+
+    通过计数器和if语句,可以让for循环执行不同的代码
+    <script>
+        for(var i = 1 ; i <= 100; i++ ){
+            if(i==1){
+                console.log('他今年' + i + '岁,他出生了');
+            }
+            else if(i==100){
+                console.log('他今年' + i + '岁,他去世了');
+            }
+            else {
+                console.log('他今年' + i + '岁了');
+            }
+        }
+    </script>
+
+    <script>
+        // 增强循环 for in
+        // 主要用于遍历对象， 不应用于遍历数组
+
+    </script>
+
+    <script>
+        // 增强循环 for of
+        // 主要用于遍历数组和类数组， 但不适用于遍历对象
+
+        // 
+        // 对于数组和类数组而言 在ES6中引入了 Lterator接口， 而 for of 循环正是通过检测 该接口来提供
+        // 遍历服务， 对于数组， 伪数组而言， 他们都提供了 Lterator接口, 所以都能使用 for of 来进行遍历
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

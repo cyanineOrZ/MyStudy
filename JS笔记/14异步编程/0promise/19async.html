@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="test">dianwo</button>
+    <script>
+        // async 用于标记某个函数，被标记的函数将会转变为async函数，
+        // 并且返回一个promise对象，且返回的promise对象的状态 由async函数的执行结果来决定
+
+        // 街上： 当async函数的结果为 成功， 则返回的promise对象就是成功的状态，反之为失败
+    
+        const button = document.querySelector("#button")
+
+        button.addEventListener("click", async function(resolve, reject) {
+            let temp = Math.floor(Math.random() * 10)
+
+            if(temp <= 4) {
+                resolve("woc,欧")
+            }
+            else {
+                reject("woc,非")
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

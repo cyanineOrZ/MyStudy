@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin-bottom: 20px;
+            background-color: black;
+        }
+        
+        .box1 {
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin-bottom: 20px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 1、通过style（内联样式）修改样式
+        const box = document.querySelector('.box')
+        box.style.width = '300px'
+        box.style.backgroundColor = 'pink'
+    </script>
+
+    <div class="box"></div>
+    <script>
+        // 2、通过类名修改样式
+        const boxNodeList = document.querySelectorAll('.box')
+        boxNodeList[1].className = 'box1'
+    </script>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        const boxList = document.querySelectorAll('.box')
+
+    </script>
+
+    <script>
+        // 通过classLIst修改类名序列 classList可以删除， 替换， 和增加类名给元素
+        // 1、替换类名 对象.classList.toggle("className")
+        // 2、增加类名 对象.classList.add("className")
+        // 3、删除类名 对象.classList.remove("className")
+
+        // 注意区分className和classList
+    </script>
+</body>
+</html>

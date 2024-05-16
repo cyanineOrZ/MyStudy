@@ -1,0 +1,1 @@
+// promisefly是一个then中以错误处理为优先的promise，与promise一模一样

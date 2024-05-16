@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    获取元素才能操纵元素
+    // 获取元素的方法
+
+    <script>
+        // 一、根据ID getElementByID("id")方法
+        // id 为特定表示为某一元素的id的字符串, 严格区分大小写
+        var element = document.getElementById()
+        // 返回一个元素对象
+        console.dir(element)
+        // dir可以一次性将元素的 属性， 方法都展示出来
+    </script>
+
+    <script>
+        // 二， 根据标签名获取元素 getElementsByTagName('TagName')
+        // TagName为 标签的名字， 如 a， li
+        // 获取页面全部该标签元素
+        var elements = document.getElementsByTagName('')
+        // 返回的是带有指定标签的对象的集合(即使只有一个标签)
+
+        // 获取特定父元素的下的该标签的子元素, 父元素的获取可以分为很多种方法
+        var father = document.getElementsByTagName('')
+        var son = father[0].getElementsByTagName('') 
+
+
+        // 返回一个存储元素的伪数组
+        for(i = 0; i < elements.length; i++) {
+            console.log(elements[i])
+        }
+    </script>
+
+    <script>
+        // H5 新增加的{ie9 以后才能用}, 根据类名class 获取元素
+        var element = document.getElementsByClassName('')
+        // 返回值为存储元素的伪数组
+
+        // querySelector()指定选择器的第一个元素对象（注意，只有第一个）
+        // 只返回第一个对象
+        var Idelement = document.querySelector('#IDName')
+        var ClassName = document.querySelector('.ClassName')
+        var element = document.querySelector('TagName')
+
+        // querySelectorAll() 全部元素的选定
+        var Idelements = document.querySelectorAll('#IDName')
+        var Classelements = document.querySelectorAll('.ClassName')
+        var elements = document.querySelectorAll('TagName')
+    </script>
+
+    <script>
+        // 获取body 和 html 这两个元素的方法
+        // body
+        var body = document.body
+
+        // html
+        var html = document.documentElement
+    </script>
+
+    <script>
+        // console.dir()
+        // 可以打印元素内部信息和元素对应方法。
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

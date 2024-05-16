@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Vue响应式的原理：实现数据与函数的联动，通过数据与函数的联动，对数据实现监听，当Model层数据发生改变时，Vue和Vm层的数据也会改变
+         * 
+         * 
+         * 
+        */
+    </script>
+
+
+    <script>
+        // 测试用例
+        const test = {
+            name: 'woc',
+            age: "12",
+            sex: 'nan',
+            son: {
+                name: "azz",
+                age: 12,
+                son: {
+                    age: 13,
+                }
+            }
+        }
+
+        // Vue的数据一般为双向数据绑定，即使没有v-mode指定
+
+        // 将Model层数据传输到VM，需要
+
+        /*
+         * 1、加工data（对data中的属性进行响应式处理，生成_data, Vue实例通过代理_data来对页面进行实时的更新）
+         * 对data返回的对象进行深度遍历, 并通过内置函数，对data内部的数据，进行加工，并一一添加getter和setter(响应式处理，这一步就是数据劫持)
+         * 
+         * 主要使用：for of 深度遍历， getter setter instanceof 原型链 Object.defineProperty(object, "key", {options} )
+        */
+
+
+        // 创建观察者函数，并且用于data监视
+        function Observer(object) {
+            // 判断传入是否为对象
+
+            // 深入遍历获取到的对象，并且将得到的对象的属性变为数组
+            const keyArray = Object.keys(object)
+        
+            for(let i = 0; i < keyArray.length; i++) {
+
+                // 判断子项是否为对象，递归
+                if(object[keyArray[i]] instanceof Object) {
+                    Observer(object[keyArray[i]])
+                }
+                
+                // 通过Object.defineProperty添加监听器
+                Object.defineProperty(this, keyArray[i], {
+                
+                    // 添加get()
+                    get() {
+                        console.log("woc");
+                        return object[keyArray[i]]
+                    },
+                
+                    // 添加set()
+                    set(value) {
+                        object[keyArray[i]] = value
+                    }
+                
+                })
+                
+            }
+        }
+        const t = new Observer(test)
+        console.log(t);
+
+        /**
+         * 2、对得到的_data，挂载到Vue实例上，并在Vue实例中，实现对_data的数据代理 
+        */
+    </script>
+</body>
+</html>

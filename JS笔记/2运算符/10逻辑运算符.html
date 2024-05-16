@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    逻辑运算符比较特殊， 当使用布尔值进行运算时， 其返回值也是布尔值true和false 当使用值进行运算时，其返回值为值（多用在短路运算） 逻辑'与' && 简称与 也就是and 当与条件都满足时， 输出true ，其中之一不满足或都不满足时， 输出false 逻辑'或' || (注意区分全角半角) 简称或 也就是or 当或条件之一满足或都满足时， 输出true ，只有当条件都不满足时， 输出false 逻辑'非' ! (注意区分全角半角) 简称非 也就是not 当条件满足时， 输出false 当条件不满足时，
+    输出为true 例子
+    <script>
+        //与
+        var a = 10;
+        b = 20;
+        c = 30;
+        console.log(a < b && b < c);
+        /*结果为true，因为a < b 是成立的 b < c 也是成立的
+                                                true 和 true 构成与结果true*/
+        console.log(a < b && c < b);
+        /*结果为false，因为a < b 是成立的，但 c < b 是不成立的
+                                                true 和 false 构成与结果false*/
+    </script>
+    <script>
+        //或
+        var a = 10;
+        b = 20;
+        c = 30;
+        console.log(a < b || b < c);
+        /*结果为true a < b 是成立的， b < c 也是成立的
+                                                true 和 true 构成或结果true*/
+        console.log(a < b || b > c);
+        /*结果为true a < b 是成立的， b > c 是不成立的
+                                                true 和 false 构成或结果true*/
+        console.log(a > b || b > c);
+        /*结果为true a < b 是成立的， b < c 也是成立的
+                                                false 和 false 构成或结果false*/
+    </script>
+    <script>
+        //非
+        var a = 10;
+        b = 20;
+        c = 30;
+        console.log(!(a < b));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

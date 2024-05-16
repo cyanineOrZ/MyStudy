@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <p>{{value | stringFormat}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: {
+                value: 1999999.99999
+            },
+
+            filters: {
+                // filter过滤器中的函数都拥有默认的一个参数，value，即传入的数据，如果function中不存在参数value
+                // Vue会自动加上value参数
+                // 当然也能传入自定义的语言格式
+                stringFormat(value) {
+                    return Math.floor(value)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

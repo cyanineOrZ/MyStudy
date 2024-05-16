@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        // vtext只能解析文本，不能解析JavaScript表达式或者标签，
+
+        // 唯一作用就是向其所在节点中添加文本，与插值语法类似
+    </script>
+    
+    <div id="root">
+        <div>{{test}}</div>
+        <div v-text="test1"></div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+
+            data: {
+                test: "插值语法",
+                test1: "vtext",
+            }
+        })
+    </script>
+</body>
+</html>

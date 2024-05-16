@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        // 1、自定义指令与元素成功绑定时，会被调用（初始化）
+
+        // 2、指令所在的模板被重新解析时，自定义指令会被调用
+    </script>
+</body>
+
+<script>
+    // 
+    new Vue({
+        el: "root",
+
+        data: {
+            test: 10
+        },
+
+        computed: {
+
+        },
+
+        methods: {
+            
+        },
+
+        directives: {
+            // 函数式自定义指令
+
+            // 函数自定义指令的默认参数 ：指令所在DOM元素【真实dom】， 指令绑定
+            // 【注意：自定义指令不支持驼峰命名法，只能使用全小写命名】
+            testdirectives(element, binding) {
+
+                // element自定义指令所在的元素
+                console.log(element);
+                
+                // binding即该指令与 数据之间的绑定， 会将全部绑定呈现出来
+                console.log(binding);
+                 
+                element.innerText = binding.test * 20
+            }
+        }
+    })
+</script>
+</html>

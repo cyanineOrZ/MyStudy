@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 箭头函数 -->
+    <script>
+        // 箭头函数的作用： 更短的代码并且不绑定this， 比简单函数表达式更加简洁
+
+        // 适用场景: 箭头函数可以更改好地代替需要匿名函数的地方
+
+        // 箭头函数不存在函数变量提升，
+    </script>
+
+    <script>
+        // 基本语法
+        const functionName = (...other) => {
+            console.log("woc");
+        }
+        functionName()
+
+        // 当箭头函数只有一个形参时， 可以省略小括号
+        const test = a => {
+            console.log(a);
+        }
+        test(10)
+
+        // 当箭头函数只有一行代码时， 可以省略大括号, 并且结果直接为返回值
+        const test1 = a => console.log(a);
+        test1(20)
+
+        const test2 = a => a * a
+        console.log(test2(2));
+
+        // 箭头函数直接返回对象
+        const test3 = (name) => ({username: name})
+        console.log(test3("woc"));
+    </script>
+
+    <script>
+        // 箭头函数this  this在箭头函数中， 指向上一层作用域的this指向
+        const test4 = () => {console.log(this);}
+        console.log(test4());
+        // 由于没有this， 所以这个函数的指向是this函数上一层作用域， 也就是script， 在script中调用函数 等于 window.functionName, 所以指向window
+
+
+
+        // 对象方法箭头函数this 
+        // 例1
+        const obj = {
+            name: 'woc',
+            sayHi: (a) => {
+                console.log(this);
+            }
+        }
+        //在这个里面， this指向window
+        
+        // 例2
+        const t = {
+            name: "woct",
+            sayHi: function() {
+                console.log(this.name);
+                const l = () => {
+                    console.log(this);
+                }
+                l()
+            }
+        }
+        console.log(t.sayHi());
+        // 因为指向上一层作用域的this指向， 所以由于是t对象调用了sayHi这个方法， 所以指向t
+    </script>
+</body>
+</html>

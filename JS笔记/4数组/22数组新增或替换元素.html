@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    一、通过length伪函数来新增数组元素
+    <script>
+        var arr = [1,2,3,4,5];
+        //arr.length = console.log(arr.length);
+        //设定数组长度大于原数组长度
+        arr.length = 6;
+        
+        //此时数组arr中新增元素为empty（空元素），数据类型为undefined
+        console.log(arr);
+
+        console.log(typeof(arr[arr.length - 1]));
+    </script>
+
+    二、通过数组索引号来追加(或替换元素)元素
+    <script>
+        //一、当索引号没有被占用时，为追加数组元素
+        var arr = [1,2,3,4,5];
+        //此时索引号为0-4 元素有5个
+        arr[5] = 6;
+        //这是将数组索引号为5的元素改为6（原来不存在）
+        console.log(arr[5]);
+
+        //当索引号被占用时，为替换更改数组元素
+        arr[0] = 10;
+        console.log(arr[0]);
+
+        //当直接给数组名赋值时，会直接将整个数组重置，并将数据元素（全部的）替换为只剩一个（新元素为你的命名）
+        arr = 'wochao'
+        console.log(arr);
+    </script>
+
+    例,
+    一、创建一个数组,并将其元素定位从1-10的十个整数
+    二、将数组元素全部替换为0
+    <script>
+        //创建数组，并添加元素
+        var arr = [];
+        var num = 10;//自定义数组量
+        for (i = 0; i < num; i++) {
+            arr[i] = i + 1;
+        }
+        console.log(arr);
+
+        //替换数组元素
+        for (i = 0; i < num; i++) {
+            arr[i] = 0;
+        }
+        console.log(arr);
+    </script>
+
+    例
+    一、创建一个数组,并赋予其一些元素
+    二、将上述数组中的大于10的元素筛选出来,并利用这些新元素创建新数组
+    <script>
+        //方法一
+        var arr1 = [2,0,6,1,77,0,51,66,97,74,62,22];
+        var arr2 = [];
+        var j = 0;
+        for (i = 0; i < arr1.length; i++) {
+            if (arr1[i] >= 10) {
+                arr2[j] = arr1[i];
+                j++;//关键在定义变量j 和j++
+            }
+        }
+        console.log(arr2);
+    </script>
+    <script>
+        //方法二
+        var arr1 = [2,0,6,1,77,0,51,66,97,74,62,22];
+        var arr2 = [];
+        for (i = 0; i < arr1.length; i++) {
+            if (arr1[i] >= 10) {
+                arr2[arr2.length] = arr[i];//arr2.length是关键
+            }
+        }
+        console.log(arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

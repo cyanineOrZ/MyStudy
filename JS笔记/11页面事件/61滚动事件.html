@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 3000px;">
+    <script>
+        // 页面在滚动的时候持续触发的事件（注意持续触发）
+
+        // 事件名： scroll 
+
+        // 使用节点：window
+    </script>
+
+    <!-- 测试事件， 页面滚动事件是当 浏览器或者元素进行滚动时（1px）触发的 -->
+    <div style="display: block; height: 100%; width: 100%; background-color: red;" id="color"></div>
+    <script>
+        const color = document.querySelector("#color")
+        window.addEventListener("scroll", function() {
+            color.style.backgroundColor = 'green'
+        })
+    </script>
+
+    <script>
+        // 获取页面到底滚动了多少像素。
+
+        console.log();
+
+    </script>
+</body>
+</html>

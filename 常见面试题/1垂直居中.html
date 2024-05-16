@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div::before {
+            content: "";
+            display: inline-block;
+            left: 0;
+            width: 20px;
+            height: 400px;
+            background-color: aqua;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <p>垂直居中</p>
+    <p>第一种方法： flex布局 主轴为纵轴</p>
+    <div style="display: flex; flex-direction: column; justify-content: center; width: 400px; height: 400px; background-color: blanchedalmond;">
+        <div style="width: 200px; height: 200px; background-color: rebeccapurple;">
+
+        </div>
+    </div>
+
+    <p>第二种方法： flex布局 主轴为横轴</p>
+    <div style="display: flex; flex-direction: row; align-items: center; width: 400px; height: 400px; background-color: blanchedalmond;">
+        <div style="width: 200px; height: 200px; background-color: rebeccapurple;">
+
+        </div>
+    </div>
+
+    <p>第三种方法， 绝对定位居中</p>
+    <div style="position: relative; width: 400px; height: 400px; background-color: blanchedalmond;">
+        <div style="position: absolute; top: 50%; transform: translateY(-50%); background-color: rebeccapurple; width: 200px; height: 200px;">
+
+        </div>
+    </div>
+
+    <p>第四种方法： 相对定位居中</p>
+    <div style="position: relative; width: 400px; height: 400px; background-color: blanchedalmond; font-size: 0;">
+        <div style="position: relative; top: 50%; transform: translateY(-50%); height: 200px; width: 200px; background-color: rebeccapurple;">
+
+        </div>
+    </div>
+
+    <p>第五种方法： 伪元素基线对准居中</p>
+    <div style="width: 400px; height: 400px; background-color: blanchedalmond; font-size: 0;" class="div">
+        <div style="display: inline-block; height: 200px; width: 200px; background-color: rebeccapurple; vertical-align:middle;">
+
+        </div>
+    </div>
+</body>
+</html>

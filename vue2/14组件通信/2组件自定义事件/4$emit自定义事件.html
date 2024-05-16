@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 简单理解就是 父组件给子组件的实力对象绑定了个事件， 子组件通过在子组件触发该事件，来实现对父组件事件methods的调用
+         * 
+         * $emit('eventName') 在这个过程中就相当于一个扳机，用来在子组件中触发父组件给子组件绑定的事件
+         * 
+         * 通过这个扳机，可以实现子组件向父组件传递数据
+         * $emit('eventName', args)
+         * 
+         * 这个就能监听子组件的状态
+         * 
+         * 
+         * 简写形式（在父组件中书写）
+         * this.$refs.VueComponentName.$on('EventName', this.Method'sFunction)
+         * (通过refs，找到子组件实例对象) （给子组件实例对象绑定事件， 当子组件触发对象后，父组件的某个方法被调用）
+        */
+    </script>
+</body>
+</html>

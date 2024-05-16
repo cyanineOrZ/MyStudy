@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            color: aqua;
+        }
+    </style>
+
+    <!-- 通过使用fetch发送请求，可以让服务端返回一个promise（异步）对象，promise响应后，将会传回一个Response对象，也即响应报文 -->
+</head>
+<body>
+    <button class="button">
+        dianji
+    </button>
+    <script>
+        const button = document.querySelector('.button')
+
+        // fetch(url, request(请求报文对象))
+
+        button.onclick = function() {
+
+            
+            fetch("http://127.0.0.1:8000/fetchTest", {
+
+                // 设置请求类型
+                method: "GET",
+
+                params: {
+                    // 设置请求参数
+                    a: 100,
+                },
+
+                headers: {
+                    // 设置请求头
+                },
+
+                // GET请求没有请求体
+
+            }).then((promise) => {
+                return promise.text()
+            }).then((res) => {
+                console.log(res);
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <script>
+        // watch虽然可以监视值或者方法的变化，但是当监听对象为一个对象时，watch无法之间通过监听对象来监听对象中的属性或者方法的变化
+        // ps：watch监听的如果是一个对象，那么watch监听的就是对象在栈里面的值，也就是对象的地址值
+
+        // 使用watch中 deep：true（默认为false）可以开启深度监听
+
+        // 也可以通过改变监听对象来直接监听该对象的属性或者方法的变化
+        // 如
+
+        new Vue({
+            watch: {
+
+                // 方法一，通过deep配置开启深度监听，会对对象中所有的属性或者方法进行遍历，有可能会浪费资源
+                deep: true,
+
+                // 方式二，指定监听，节省资源， 多个属性还是deep方便
+                "test.a": {
+
+                }
+            }
+        })
+
+        // vue可以监听多层级数据的改变，但是需要watch指定或者配置
+
+
+        /**
+         * 深度监听和监听的区别
+         * 
+         * 多层级数据的监听
+        */
+    </script>
+</body>
+</html>

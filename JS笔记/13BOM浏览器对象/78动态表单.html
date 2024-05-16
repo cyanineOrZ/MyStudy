@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .contain {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+        }
+
+        .tableTitle {
+            margin: 10px auto;
+            background-color: gray;
+            height: 50px;
+            width: 780px;
+        }
+
+        .table {
+            border-collapse: collapse;
+            margin: 10px auto;
+        }
+
+
+        .table thead tr td {
+            display: block;
+            background-color: gray;
+            text-align: center;
+            font-size: 24px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="title">
+            <h1 style="text-align: center; font-size: 40px; font-weight: 500; margin: 10px 0;">学生就业统计表</h1>
+        </div>
+
+        <div >
+            <form action="" class="form" autocomplete="off">
+                <input type="text" placeholder="姓名">
+                <input type="text" placeholder="年龄">
+                <input type="text" placeholder="专业">
+                <select name="" id="">
+                    <option value="">男</option>
+                    <option value="">女</option>
+                </select>
+                <input type="text" placeholder="城市">
+                <input type="button" style="width: 50px;" value="提交">
+            </form>
+        </div>
+
+        <div class="tableTitle">
+            <div>
+
+            </div>
+        </div>
+
+        <div class="table">
+            <table>
+                <thead>
+                    <tr style="display: flex; flex-direction: row; justify-content: space-between; width: 780px;">
+                        <td>ID</td>
+                        <td>姓名</td>
+                        <td>年龄</td>
+                        <td>性别</td>
+                        <td>专业</td>
+                        <td>城市</td>
+                        <td>录入时间</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script>
+        console.log(/^1?$/.test("111"));
+    </script>
+</body>
+</html> 

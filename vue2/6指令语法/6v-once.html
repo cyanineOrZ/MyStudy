@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="../0vue搭建/0vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div v-once>
+            {{n}}
+        </div>
+
+        <div>
+            {{n}}
+        </div>
+
+        <button @click="Number($event)">dianzheli</button>
+    </div>
+    <script>
+        // vonce 就是所在节点的内容在第一次解析后，就会变为静态数据而脱离响应式了
+
+        new Vue({
+            el: "#root",
+
+            data: {
+                n: 0,
+            },
+
+            methods: {
+                Number: function(event) {
+                    this.n = this.n + 1
+                }
+            },
+        })
+    </script>
+</body>
+</html>

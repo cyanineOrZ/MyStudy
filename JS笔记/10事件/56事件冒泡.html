@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 事件冒泡 当一个元素被触发时, 同类型的会在该元素的所有祖先元素中依次触发,
+
+        // 人话就是, 某个节点的事件被触发后, 浏览器会从该节点开始向上冒泡, 直至document根节点, 并在冒泡的时候触发该节点的祖先节点中绑定的同类型事件
+
+        // 事件冒泡是一定会发生的,除非人为阻止
+    </script>
+
+    <div style="width: 400px; height: 400px; background-color: khaki;" id="father">
+        <div style="width: 200px; height: 200px; background-color: forestgreen;" id="son">
+
+        </div>
+    </div>
+    <script>
+        // 事件冒泡例子
+        const body = document
+        const father = document.querySelector("#father")
+        const son = document.querySelector("#son")
+
+        body.addEventListener("click", function() {
+            alert("wocbody")
+        })
+
+        father.addEventListener("click", function() {
+            alert("wocfather")
+        })
+
+        son.addEventListener("click", function() {
+            alert("wocson")
+        })
+
+        // 点击页面空白区域, 只会弹出一个告示
+
+        // 点击大div, 会弹出两个告示 wocfather wocbody
+
+        // 点击小div, 会弹出三个告示 顺序为 wocson wocfather wocbody
+    </script>
+
+
+    <div style="width: 100%; height: 100px;"></div>
+
+    <div style="width: 400px; height: 400px; background-color: khaki;" id="father1">
+        <div style="width: 200px; height: 200px; background-color: forestgreen;" id="son1">
+
+        </div>
+    </div>
+    <script>
+        // 如何阻止事件冒泡(面试题)
+        // 1、通过事件对象进行阻止  e.stopPropagation();
+        const father1 = document.querySelector("#father1")
+        const son2 = document.querySelector("#son1")
+
+        body.addEventListener("click", function() {
+            alert("wocbody")
+        })
+
+        father1.addEventListener("click", function(e) {
+            alert("wocfather1")
+            e.stopPropagation();
+        })
+
+        son1.addEventListener("click", function() {
+            alert("wocson1")
+        })
+        // 在father1 盒子添加事件对象， 并通过事件对象阻止时间冒泡， 可以看到
+
+        // 点击空白页面时， 只弹出一个告示 wocbody
+
+        // 点击father时， 只弹出一个告示 wocfather1
+
+        // 点击son时, 弹出两个告示 , 顺序时 wocson1, wocfather1
+
+        // 从此处可以推断出, 从father1处截断了事件冒泡的过程
+
+        // 但是注意, stopPropagation();只会阻止事件冒泡到祖先元素, 但对于默认行为, stopPropagation();是不会阻止的, 比如a的链接, 如果子元素和父元素都拥有, 
+        // 那么stopPropagation();无法阻止子元素被点击时,父元素链接一同变色.
+        // stopPropagation()阻止的不只是冒泡，而是阻止事件流传播， 也即事件捕获也能阻止。
+    </script>
+
+    <script>
+        // ie浏览器使用 e.cancelBubble = true 阻止事件冒泡
+    </script>
+</body>
+</html>
